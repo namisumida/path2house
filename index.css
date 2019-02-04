@@ -1,0 +1,132 @@
+@font-face {
+  font-family: radnika-black;
+  src: url("fonts/Radnika-Black.otf");
+}
+@font-face {
+  font-family: radnika-bold;
+  src: url("fonts/Radnika-Bold.otf");
+}
+@font-face {
+  font-family: radnika-regular;
+  src: url("fonts/Radnika-Regular.otf");
+}
+@font-face {
+  font-family: radnika-medium;
+  src: url("fonts/Radnika-Medium.otf");
+}
+@font-face {
+  font-family: stratum-medium;
+  src: url("fonts/Stratum2-Medium.otf");
+}
+@font-face {
+  font-family: stratum-regular;
+  src: url("fonts/Stratum2-Regular.otf");
+}
+
+body,html {
+  min-width: 300px;
+  font-family: system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+#header {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: 30px;
+  border-bottom: 1px solid black;
+}
+#subtitle {
+  padding: 8px;
+}
+
+
+
+
+#options {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: auto;
+}
+.options-section {
+  width: 33%;
+}
+button {
+  background-color: none;
+  font-size: 11px;
+  border-radius: 2px;
+  height: 20px;
+  font-weight: 600;
+  color: rgb(79,39,79);
+  border: 1.5px solid rgb(79,39,79);
+  cursor: pointer;
+}
+#button-party {
+  width: 45px;
+}
+#button-year {
+  width: 80px;
+}
+
+
+
+
+#chart {
+  max-width: 600px;
+  height: 1800px;
+  margin: auto;
+  margin-top: 30px;
+}
+#chart-svg {
+  width: 100%;
+  height: 100%;
+}
+.bigLabels {
+  font-size: 13px;
+  font-weight: 800;
+}
+.smallLabels {
+  font-size: 12px;
+  font-weight: 300;
+}
+.memberDots {
+  fill: #377668;
+}
+
+
+
+
+#methods {
+  margin: 0 auto;
+  max-width: 600px;
+}
+#methods-text {
+  font-size: 11px;
+  font-weight: 300;
+}
+@media screen and (min-width:400px) {
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 200;
+  }
+}
+@media screen and (max-width:400px) {
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+  }
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 11px;
+    font-weight: 200;
+  }
+}
