@@ -5,8 +5,13 @@ var dataset_counts; // dataset with topline counts for each experience
 function getOverlapCounts(var1, var2) {
   var dataset_filtered = dataset_ind.filter(function(d) { return d.var1==1 & d.var2==1; });
 }; // end getCounts
-function getOrder(data) {
-  console.log(data.sort(function(a,b) { return a.count<b.count; }));
+function getOrder(counts_data) {
+  var sorted_data = counts_data.sort(function(a,b) { return b.count-a.count; });
+  var sorted_exp = [];
+  for (var i=0; i<sorted_data.length; i++) {
+    sorted_exp.push(sorted_data[i].experience);
+  }
+  return(sorted_exp);
 }; // end getOrder
 
 
@@ -54,24 +59,31 @@ const svg = d3.select("#chart-svg");
 // Defining margins
 var w = document.getElementById("chart-svg").getBoundingClientRect().width;
 // Define universal margins - first setting to figure out margins for the 2 views
-var margin_top = margin_bottom = margin_left = margin_right = margin_btwn = 20;
+var margin_top = margin_bottom = margin_btwn = 20;
 var margin_btwnCol = 15;
 var w_labels = 100;
-var circlesPerRow = (w - margin_left - w_labels - margin_btwn - margin_right)/10;
-var circlesPewCol = Math.ceil(219/circlesPerRow);
+var circleRadius = 5;
+var circleSpace = 12;
+var circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
+var circlesPerCol = Math.ceil(219/circlesPerRowMax); // max number of members in one category
+var circlesPerRow = Math.ceil(219/circlesPerCol);
 var h_bigLabels = 20;
-var circleRadius = 4;
-var circleSpace = 10;
 // adjusted margins
-var adjusted_left = adjusted_right = (w - w_labels - circlesPerRow*circleSpace)/2
+var margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2;
+// re-calculate height
+var h = margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*28 + margin_btwn*3 + margin_bottom;
+document.getElementById("chart-svg").style.height = h;
+// Colors
+var green = d3.color("#377668");
+
 
 function setup() {
   // FIRST VIEW: One column
   // Set up groups
-  var gCol = svg.append("g").attr("transform", "translate(" + adjusted_left + "," + margin_top + ")");
+  var gCol = svg.append("g").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
 
-  // Create labels
-  var dataset_labels = ["COLLEGE", "GRADUATE SCHOOL", "CAREER", "POLITICS"];
+  // Create big labels
+  var dataset_labels = ["COLLEGE", "GRADUATE SCHOOL", "CAREER", "POLITICAL OFFICE"];
   gCol.selectAll(".gBigLabels")
       .data(dataset_labels)
       .enter()
@@ -80,100 +92,139 @@ function setup() {
       .attr("x", 0)
       .attr("y", function(d,i) {
         if (i==0) { return 10; }
-        else if (i==1) { return (20+5)*circleSpace + h_bigLabels; } // 20 bars and some wiggle room
-        else if (i==2) { return (20+5+20+5)*circleSpace + h_bigLabels*2; }
-        else if (i==3) { return (20+5+20+5+85+5)*circleSpace + h_bigLabels*3; }
+        else if (i==1) { return h_bigLabels + (circlesPerCol*circleSpace + 10)*4 + margin_btwn; }
+        else if (i==2) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2; }
+        else if (i==3) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3; }
       })
       .text(function(d) { return d; });
-  // Create dots
+
   // College experience
+  // Get order
+  var order_college = getOrder(dataset_counts.slice(0,4));
+  // Create dots
   for (var j=0; j<4; j++) {
-    if (j==0) { var college = "none"; }
-    else if (j==1) { var college = "public"; }
-    else if (j==2) { var college = "private"; }
-    else { var college = "elite"; };
     gCol.selectAll("collegeDots")
-        .data(dataset_ind.filter(function(d) { return d.edu_college==college; }))
+        .data(dataset_ind.filter(function(d) { return d.edu_college==order_college[j]; }))
         .enter()
         .append("circle")
         .attr("class", "memberDots")
-        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPewCol); })
-        .attr("cy", function(d,i) { return h_bigLabels + (10 + circleSpace*circlesPewCol)*j + circleSpace*(i%circlesPewCol); })
+        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+        .attr("cy", function(d,i) { return h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
         .attr("r", circleRadius);
   };
+  // Create labels
   gCol.selectAll("labels")
-      .data(["No Bachelor's degree", "Public school", "Private school", "Elite school"])
+      .data(["Public school", "Private school", "Elite school", "No Bachelor's degree"])
       .enter()
       .append("text")
       .attr("class", "smallLabels")
       .text(function(d) { return d; })
       .attr("x", 0)
-      .attr("y", function(d,i) { return h_bigLabels + circleSpace*(circlesPewCol/3) + (10 + circleSpace*circlesPewCol)*i; })
+      .attr("y", function(d,i) { return h_bigLabels + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
       .call(wrap, w_labels-15);
+
   // Graduate school experience
+  // Get order
+  var order_grad = getOrder(dataset_counts.slice(4,8));
+  // Create dots
   for (var j=0; j<4; j++) {
-    var currVar = dataset_ind.columns[(j+3)];
     gCol.selectAll("gradDots")
-        .data(dataset_ind.filter(function(d) { return d[currVar]==1; }))
+        .data(dataset_ind.filter(function(d) { return d[order_grad[j]]==1; }))
         .enter()
         .append("circle")
         .attr("class", "memberDots")
-        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPewCol); })
-        .attr("cy", function(d,i) { return h_bigLabels*2 + (20+5)*circleSpace + (10 + circleSpace*circlesPewCol)*j + circleSpace*(i%circlesPewCol); })
+        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+        .attr("cy", function(d,i) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
         .attr("r", circleRadius);
   };
+  // Create labels
   gCol.selectAll("labels")
-      .data(["Medical school", "Law school", "Masters", "Doctorate"])
+      .data(["Law school", "Masters", "Medical school", "Doctorate"])
       .enter()
       .append("text")
       .attr("class", "smallLabels")
       .text(function(d) { return d; })
       .attr("x", 0)
-      .attr("y", function(d,i) { return h_bigLabels*2 + (20+5)*circleSpace + circleSpace*(circlesPewCol/3) + (10 + circleSpace*circlesPewCol)*i; })
+      .attr("y", function(d,i) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
       .call(wrap, w_labels-15);
+
   // Career
+  // Get order
+  var order_career = getOrder(dataset_counts.slice(8,23));
+  // Create dots
   for (var j=0; j<15; j++) {
-    var currVar = dataset_ind.columns[(j+7)];
-    gCol.selectAll("gradDots")
-        .data(dataset_ind.filter(function(d) { return d[currVar]==1; }))
+    gCol.selectAll("workDots")
+        .data(dataset_ind.filter(function(d) { return d[order_career[j]]==1; }))
         .enter()
         .append("circle")
         .attr("class", "memberDots")
-        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPewCol); })
-        .attr("cy", function(d,i) { return h_bigLabels*3 + (40+10)*circleSpace + (10 + circleSpace*circlesPewCol)*j + circleSpace*(i%circlesPewCol); })
+        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+        .attr("cy", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
         .attr("r", circleRadius);
   };
+  // Create labels
   gCol.selectAll("labels")
-      .data(["Blue-collar/ service job", "Business/ management", "Education", "Farming/ ranching", "Law enforcement", "Lobbying/ activism",
-             "Media", "Medicine", "Military", "Nonprofits & unions", "Private law", "Real estate", "Religious leader", "Science/ engineering", "Sports"])
+      .data(["Business/ management","Private law","Military","Education","Nonprofits & unions","Medicine", "Real estate","Farming/ ranching","Media", "Lobbying/ activism","Blue-collar/ service job","Science/ engineering","Law enforcement","Sports","Religious leader"])
       .enter()
       .append("text")
       .attr("class", "smallLabels")
       .text(function(d) { return d; })
       .attr("x", 0)
-      .attr("y", function(d,i) { return h_bigLabels*3 + (40+10)*circleSpace + circleSpace*(circlesPewCol/3) + (10 + circleSpace*circlesPewCol)*i; })
+      .attr("y", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
       .call(wrap, w_labels-15);
+
   // Government
+  // Get order
+  var order_gov = getOrder(dataset_counts.slice(23,28));
   for (var j=0; j<5; j++) {
-    var currVar = dataset_ind.columns[(j+22)];
-    gCol.selectAll("gradDots")
-        .data(dataset_ind.filter(function(d) { return d[currVar]==1; }))
+    gCol.selectAll("govDots")
+        .data(dataset_ind.filter(function(d) { return d[order_gov[j]]==1; }))
         .enter()
         .append("circle")
         .attr("class", "memberDots")
-        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPewCol); })
-        .attr("cy", function(d,i) { return h_bigLabels*4 + (20+5+20+5+85+5)*circleSpace + (10 + circleSpace*circlesPewCol)*j + circleSpace*(i%circlesPewCol); })
+        .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+        .attr("cy", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
         .attr("r", circleRadius);
   };
   gCol.selectAll("labels")
-      .data(["Federal or state office", "Local government", "No previous office", "Public lawyer or judge", "State legislature"])
+      .data(["State legislature","Local government","No previous office","Federal or state office","Public lawyer or judge"])
       .enter()
       .append("text")
       .attr("class", "smallLabels")
       .text(function(d) { return d; })
       .attr("x", 0)
-      .attr("y", function(d,i) { return h_bigLabels*4 + (20+5+20+5+85+5)*circleSpace + circleSpace*(circlesPewCol/3) + (10 + circleSpace*circlesPewCol)*i; })
+      .attr("y", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
       .call(wrap, w_labels-15);
+
+  // Mouseover feature
+  svg.selectAll(".memberDots")
+     .on("mouseover", function(d) {
+       var currDot = d3.select(this);
+       var currX = parseInt(currDot.attr("cx"));
+       var currY = parseInt(currDot.attr("cy"));
+       // style changes
+       currDot.style("fill", d3.color("#D1A730"));
+       // tooltip
+       gCol.append("rect")
+           .attr("class", "mouseover_back")
+           .attr("x", currX+10)
+           .attr("y", currY)
+           .attr("width", 100)
+           .attr("height", 20)
+           .style("fill", "white");
+
+       gCol.append("text")
+           .attr("class", "mouseover_text")
+           .text(function() { return d.full_name + " (" + d.state + ")"; })
+           .attr("x", currX+15)
+           .attr("y", currY+10)
+           .call(wrap, 95);
+     })
+     .on("mouseout", function() {
+       d3.select(this).style("fill", green);
+       svg.selectAll(".mouseover_text").remove();
+       svg.selectAll(".mouseover_back").remove();
+     })
 
 }; // end setup
 
