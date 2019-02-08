@@ -12,14 +12,19 @@ merged <- merge(paths, members[c("full_name", "gender", "state", "party")], by=c
 merged$party.x <- as.character(merged$party.x)
 merged$party.y <- as.character(merged$party.y)
 merged$party <- ifelse(merged$party.x=="", merged$party.y, merged$party.x)
+# separate out college variable into multiple 
+merged$college_none <- ifelse(merged$edu_college=="none", 1, 0)
+merged$college_public <- ifelse(merged$edu_college=="public", 1, 0)
+merged$college_private <- ifelse(merged$edu_college=="private", 1, 0)
+merged$college_elite <- ifelse(merged$edu_college=="elite", 1, 0)
 # remove unnecessary variables
-merged <- subset(merged,select = -c(party.x, party.y, first_name, last_name))
+merged <- subset(merged,select = -c(party.x, party.y, first_name, last_name, edu_college))
 # convert to numeric 
 for (i in 4:27) {
   merged[,i] <- ifelse(merged[,i]=="1", 1, 0)
 }
 # export
-write.csv(merged, '../personal projects/path2house/Data/merged.csv', row.names = FALSE)
+write.csv(merged, 'merged.csv', row.names = FALSE)
 
 # Create a dataset with topline counts for each experience 
 experience <- c("college_none", "college_public", "college_private", "college_elite")

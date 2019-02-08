@@ -1,435 +1,435 @@
-"full_name","state","edu_college","edu_med","edu_law","edu_masters","edu_doctorate","work_bluecollar","work_business","work_education","work_farming","work_lawenforcement","work_lobbying","work_media","work_medicine","work_military","work_nonprofits","work_privatelaw","work_realestate","work_religiousleader","work_science","work_sports","gov_fedstate","gov_local","gov_none","gov_publiclawyerjudge","gov_stateleg","new","gender","party"
-"Abby Finkenauer","IA","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Abigail Spanberger","VA","college_public",0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Adam Kinzinger","IL","college_public",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Adam Schiff","CA","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Democrat"
-"Adam Smith","WA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Democrat"
-"Adrian Smith","NE","college_public",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Adriano Espaillat","NY","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Al Green","TX","college_none",0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat"
-"Al Lawson","FL","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,"M","Democrat"
-"Alan Lowenthal","CA","college_private",0,0,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Albio Sires","NJ","college_private",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Alcee L. Hastings","FL","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat"
-"Alex Mooney","WV","college_elite",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Alexandria Ocasio-Cortez","NY","college_private",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Alma Adams","NC","college_public",0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Ami Bera","CA","college_public",1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"André Carson","IN","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Andy Barr","KY","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Andy Biggs","AZ","college_private",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Andy Harris","MD","college_private",1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Andy Kim","NJ","college_elite",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Andy Levin","MI","college_private",0,1,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Angie Craig","MN","college_public",0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Ann Kirkpatrick","AZ","college_public",0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Democrat"
-"Ann McLane Kuster","NH","college_elite",0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Ann Wagner","MO","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"F","Republican"
-"Anna Eshoo","CA","college_none",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Anthony Brindisi","NY","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Anthony G. Brown","MD","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,1,0,"M","Democrat"
-"Anthony Gonzalez","OH","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,NA,"Republican"
-"Antonio Delgado","NY","college_private",0,1,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Austin Scott","GA","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Ayanna Pressley","MA","college_none",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Democrat"
-"Barbara Lee","CA","college_private",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Barry Loudermilk","GA","college_private",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Ben Cline","VA","college_private",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Republican"
-"Ben McAdams","UT","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Ben Ray Luján","NM","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Democrat"
-"Bennie G. Thompson","MS","college_private",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Betty McCollum","MN","college_private",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Bill Flores","TX","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Bill Foster","IL","college_public",0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Democrat"
-"Bill Huizenga","MI","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Bill Johnson","OH","college_public",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Bill Keating","MA","college_private",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,"M","Democrat"
-"Bill Pascrell Jr.","NJ","college_private",0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Bill Posey","FL","college_none",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Billy Long","MO","college_none",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Blaine Luetkemeyer","MO","college_public",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,"M","Republican"
-"Bob Gibbs","OH","college_none",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Bobby L. Rush","IL","college_private",0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,"M","Democrat"
-"Bobby Scott","VA","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Bonnie Watson Coleman","NJ","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"F","Democrat"
-"Brad Schneider","IL","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Brad Sherman","CA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"M","Democrat"
-"Brad Wenstrup","OH","college_public",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Bradley Byrne","AL","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,"M","Republican"
-"Brenda Lawrence","MI","college_public",0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Brendan F. Boyle","PA","college_private",0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Brett Guthrie","KY","college_public",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Brian Babin","TX","college_public",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,"M","Republican"
-"Brian Fitzpatrick","PA","college_private",0,1,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Brian Higgins","NY","college_public",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Brian Mast","FL","college_private",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Bruce Westerman","AR","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,"M","Republican"
-"Bryan Stell","WI","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,NA,"Republican"
-"C. A. Dutch Ruppersberger","MD","college_none",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"M","Democrat"
-"Carol Miller","WV","college_private",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Carolyn B. Maloney","NY","college_private",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Cathy McMorris Rodgers","WA","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Republican"
-"Cedric L. Richmond","LA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Charlie Crist","FL","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,1,0,"M","Democrat"
-"Chellie Pingree","ME","college_private",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Cheri Bustos","IL","college_public",0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Chip Roy","TX","college_public",0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,NA,"Republican"
-"Chris Collins","NY","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Chris Pappas","NH","college_elite",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,NA,"Democrat"
-"Chris Stewart","UT","college_public",0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Chrissy Houlahan","PA","college_elite",0,0,1,0,0,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Christopher H. Smith","NJ","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Chuck Fleischmann","TN","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Cindy Axne","IA","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Clay Higgins","LA","college_none",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Colin Allred","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,NA,"Democrat"
-"Collin C. Peterson","MN","college_public",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Conor Lamb","PA","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,NA,"Democrat"
-"Dan Crenshaw","TX","college_private",0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Dan Meuser","PA","college_elite",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Republican"
-"Dan Newhouse","WA","college_public",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Republican"
-"Daniel Lipinski","IL","college_private",0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Daniel T. Kildee","MI","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Daniel Webster","FL","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Danny K. Davis","IL","college_public",0,0,1,1,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Darin LaHood","IL","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Republican"
-"Darren Soto","FL","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"David B. McKinley","WV","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,"M","Republican"
-"David E. Price","NC","college_public",0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"David Joyce","OH","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"David Kustoff","TN","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,"M","Republican"
-"David Loebsack","IA","college_public",0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"David N. Cicilline","RI","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"M","Democrat"
-"David Rouzer","NC","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"David Schweikert","AZ","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0,"M","Republican"
-"David Scott","GA","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"David Trone","MD","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Dean Phillips","MN","college_elite",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Deb Haaland","NM","college_public",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Democrat"
-"Debbie Dingell","MI","college_private",0,0,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Debbie Lesko","AZ","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Debbie Mucarsel-Powell","FL","college_private",0,0,1,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Debbie Wasserman Schultz","FL","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Denny Heck","WA","college_public",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Denver Riggleman","VA","college_public",0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Derek Kilmer","WA","college_elite",0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Devin Nunes","CA","college_public",0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Diana DeGette","CO","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Dina Titus","NV","college_public",0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Don Bacon","NE","college_public",0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Don Beyer Jr.","VA","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Democrat"
-"Don Young","AK","college_public",0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Donald M. Payne Jr.","NJ","college_none",0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Donald McEachin","VA","college_private",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Donald Norcross","NJ","college_none",0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Donna Shalala","FL","college_private",0,0,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Doris O. Matsui","CA","college_public",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Doug Collins","GA","college_public",0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,1,0,"M","Republican"
-"Doug LaMalfa","CA","college_public",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Doug Lamborn","CO","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Drew Ferguson IV","GA","college_none",1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,"M","Republican"
-"Duncan Hunter","CA","college_public",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Dusty Johnson","SD","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Republican"
-"Dwight Evans","PA","college_private",0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Earl Blumenauer","OR","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,"M","Democrat"
-"Earl L. Carter","GA","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Republican"
-"Ed Case","HI","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Ed Perlmutter","CO","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Eddie Bernice Johnson","TX","college_private",0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Elaine Luria","VA","college_public",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Elijah E. Cummings","MD","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Eliot L. Engel","NY","college_public",0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Elise M. Stefanik","NY","college_elite",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Republican"
-"Elissa Slotkin","MI","college_elite",0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Emanuel Cleaver","MO","college_public",0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,"M","Democrat"
-"Eric Swalwell","CA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,"M","Democrat"
-"Filemon Vela","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Francis Rooney","FL","college_private",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican"
-"Frank D. Lucas","OK","college_public",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Frank Pallone Jr.","NJ","college_private",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Fred Upton","MI","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Frederica S. Wilson","FL","college_private",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"French Hill","AR","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican"
-"G. K. Butterfield","NC","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat"
-"Garret Graves","LA","college_none",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican"
-"Gary Palmer","AL","college_public",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Republican"
-"George Holding","NC","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Gerry Connolly","VA","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Gil Cisneros","CA","college_private",0,0,1,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Glenn Grothman","WI","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Glenn Thompson","PA","college_public",0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Grace F. Napolitano","CA","college_none",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Grace Meng","NY","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Greg Gianforte","MT","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Republican"
-"Greg Pence","IN","college_private",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Greg Stanton","AZ","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,NA,"Democrat"
-"Greg Steube","FL","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Greg Walden","OR","college_public",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Gregory W. Meeks","NY","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,"M","Democrat"
-"Gus M. Bilirakis","FL","college_public",0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Guy Reschenthaler","PA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Republican"
-"Gwen Moore","WI","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Hakeem Jeffries","NY","college_public",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Haley Stevens","MI","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Hank Johnson","GA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,1,NA,"Democrat"
-"Harley Rouda","CA","college_public",0,1,1,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Harold Rogers","KY","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Henry Cuellar","TX","college_private",0,1,1,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,"M","Democrat"
-"Ilhan Omar","MN","college_public",0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Jack Bergman","MI","college_private",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican"
-"Jackie Speier","CA","college_public",0,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Jackie Walorski","IN","college_private",0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Republican"
-"Jahana Hayes","CT","college_public",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Jaime Herrera Beutler","WA","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Republican"
-"James Comer","KY","college_public",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Republican"
-"James E. Clyburn","SC","college_public",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Democrat"
-"Jamie Raskin","MD","college_elite",0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,"M","Democrat"
-"Jan Schakowsky","IL","college_public",0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Jared Golden","ME","college_private",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Jared Huffman","CA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Jason Crow","CO","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Jason Smith","MO","college_public",0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Jeff Duncan","SC","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Jeff Fortenberry","NE","college_public",0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Jeff Van Drew","NJ","college_public",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Jennifer Wexton","VA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Democrat"
-"Jerrold Nadler","NY","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Jerry McNerney","CA","college_public",0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Democrat"
-"Jésus Garcia","IL","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Jim Baird","IN","college_public",0,0,1,1,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Republican"
-"Jim Banks","IN","college_public",0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Jim Cooper","TN","college_public",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Jim Costa","CA","college_public",0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Jim Hagedorn","MN","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Jim Himes","CT","college_elite",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Jim Jordan","OH","college_public",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,"M","Republican"
-"Jim Langevin","RI","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Democrat"
-"Jim McGovern","MA","college_private",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Jim Sensenbrenner","WI","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Jimmy Gomez","CA","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Jimmy Panetta","CA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,"M","Democrat"
-"Joaquin Castro","TX","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Jodey C. Arrington","TX","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Jody B. Hice","GA","college_private",0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,"M","Republican"
-"Joe Courtney","CT","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Joe Cunningham","SC","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,NA,"Democrat"
-"Joe Neguse","CO","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Joe Wilson","SC","college_private",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,1,0,"M","Republican"
-"John Carter","TX","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"John Garamendi","CA","college_public",0,0,1,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,"M","Democrat"
-"John Joyce","PA","college_public",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"John Katko","NY","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"John Larson","CT","college_public",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"John Lewis","GA","college_private",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"John Moolenaar","MI","college_private",0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,"M","Republican"
-"John R. Curtis","UT","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Republican"
-"John Ratcliffe","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"M","Republican"
-"John Rose","TN","college_public",0,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Republican"
-"John Rutherford","FL","college_public",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"John Sarbanes","MD","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"John Shimkus","IL","college_public",0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"John Yarmuth","KY","college_elite",0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"José E. Serrano","NY","college_none",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Joseph Morelle","NY","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Joseph P. Kennedy III","MA","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"M","Democrat"
-"Josh Gottheimer","NJ","college_elite",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Josh Harder","CA","college_elite",0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Joyce Beatty","OH","college_public",0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Juan Vargas","CA","college_private",0,1,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Judy Chu","CA","college_public",0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,"F","Democrat"
-"Julia Brownley","CA","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Justin Amash","MI","college_public",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Karen Bass","CA","college_public",0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Katherine M. Clark","MA","college_private",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,1,1,0,"F","Democrat"
-"Kathleen M. Rice","NY","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"F","Democrat"
-"Kathy Castor","FL","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Katie Hill","CA","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Katie Porter","CA","college_elite",0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Kay Granger","TX","college_private",0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Republican"
-"Kelly Armstrong","ND","college_public",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Ken Buck","CO","college_elite",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Ken Calvert","CA","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Kendra Horn","OK","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Kenny Marchant","TX","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Kevin Brady","TX","college_public",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Kevin Hern","OK","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,1,NA,"Republican"
-"Kevin McCarthy","CA","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Kim Schrier","WA","college_public",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Kurt Schrader","OR","college_elite",1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Lance Gooden","TX","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Larry Bucshon","IN","college_public",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Lauren Underwood","IL","college_public",0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Lee M. Zeldin","NY","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Linda T. Sánchez","CA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Lisa Blunt Rochester","DE","college_private",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,"F","Democrat"
-"Liz Cheney","WY","college_private",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"F","Republican"
-"Lizzie Pannill Fletcher","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Lloyd Doggett","TX","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,"M","Democrat"
-"Lloyd Smucker","PA","college_none",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Lois Frankel","FL","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"F","Democrat"
-"Lori Trahan","MA","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Lou Correa","CA","college_public",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0,"M","Democrat"
-"Louie Gohmert","TX","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Lucille Roybal-Allard","CA","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Lucy McBath","GA","college_public",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Mac Thornberry","TX","college_public",0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"M","Republican"
-"Madeleine Dean","PA","college_private",0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat"
-"Marc Veasey","TX","college_private",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Marcia L. Fudge","OH","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Marcy Kaptur","OH","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Mario Diaz-Balart","FL","college_none",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Mark Amodei","NV","college_public",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Mark DeSaulnier","CA","college_private",0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Mark Green","TN","college_public",1,0,1,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Mark Meadows","NC","college_none",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Mark Pocan","WI","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Mark Takano","CA","college_elite",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Mark Walker","NC","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,"M","Republican"
-"Markwayne Mullin","OK","college_none",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Martha Roby","AL","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"F","Republican"
-"Mary Gay Scanlon","PA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,NA,"Democrat"
-"Matt Cartwright","PA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Matt Gaetz","FL","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Max Rose","NY","college_private",0,0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Maxine Waters","CA","college_public",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Michael C. Burgess","TX","college_public",1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Michael Cloud","TX","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Michael Guest","MS","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,NA,"Republican"
-"Michael McCaul","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Michael R. Turner","OH","college_private",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Michael Waltz","FL","college_public",0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Mike Bost","IL","college_none",0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Mike Conaway","TX","college_public",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,1,NA,"Republican"
-"Mike Doyle","PA","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Mike Gallagher","WI","college_elite",0,0,1,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Mike Johnson","LA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Mike Kelly","PA","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Mike Levin","CA","college_elite",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Mike Quigley","IL","college_private",0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Mike Rogers","AL","college_public",0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,1,1,0,"M","Republican"
-"Mike Simpson","ID","college_public",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Mike Thompson","CA","college_public",0,0,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Mikie Sherrill","NJ","college_public",0,1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,NA,"Democrat"
-"Mo Brooks","AL","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"M","Republican"
-"Morgan Griffith","VA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Nancy Pelosi","CA","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Nanette Diaz Barragán","CA","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Neal Dunn","FL","college_private",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Nita Lowey","NY","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"F","Democrat"
-"Norma J. Torres","CA","college_private",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Nydia M. Velázquez","NY","college_public",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"F","Democrat"
-"Patrick T. McHenry","NC","college_private",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,"M","Republican"
-"Paul Cook","CA","college_public",0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Paul Gosar","AZ","college_private",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Paul Mitchell","MI","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Paul Tonko","NY","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,1,0,"M","Democrat"
-"Pete Aguilar","CA","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"M","Democrat"
-"Pete Olson","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Pete Stauber","MN","college_public",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,NA,"Republican"
-"Peter DeFazio","OR","college_private",0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Peter J. Visclosky","IN","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Peter T. King","NY","college_private",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,"M","Republican"
-"Peter Welch","VT","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Democrat"
-"Phil Roe","TN","college_public",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Republican"
-"Pramila Jayapal","WA","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat"
-"Raja Krishnamoorthi","IL","college_elite",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,"M","Democrat"
-"Ralph Abraham","LA","college_public",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Ralph Norman","SC","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Randy Weber","TX","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Rashida Tlaib","MI","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Raúl M. Grijalva","AZ","college_public",0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Raul Ruiz","CA","college_public",1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Richard E. Neal","MA","college_private",0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Richard Hudson","NC","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Rick Crawford","AR","college_public",0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Rick Larsen","WA","college_private",0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Rick W. Allen","GA","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Ro Khanna","CA","college_elite",0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"M","Democrat"
-"Rob Bishop","UT","college_public",0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Rob Wittman","VA","college_public",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Rob Woodall","GA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Robert B. Aderholt","AL","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Robert E. Latta","OH","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Robin L. Kelly","IL","college_private",0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Rodney Davis","IL","college_private",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Roger W. Marshall","KS","college_public",1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican"
-"Roger Williams","TX","college_private",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,"M","Republican"
-"Ron Estes","KS","college_public",0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"M","Republican"
-"Ron Kind","WI","college_elite",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat"
-"Ron Wright","TX","college_none",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Republican"
-"Rosa L. DeLauro","CT","college_private",0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Ross Spano","FL","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Ruben Gallego","AZ","college_elite",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Russ Fulcher","ID","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Salud Carbajal","CA","college_public",0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Sam Graves","MO","college_public",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Sanford D. Bishop Jr.","GA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Scott DesJarlais","TN","college_public",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Scott Perry","PA","college_public",0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Scott Peters","CA","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,1,0,0,"M","Democrat"
-"Scott R. Tipton","CO","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Sean Casten","IL","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,NA,"Democrat"
-"Sean P. Duffy","WI","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,"M","Republican"
-"Sean Patrick Maloney","NY","college_public",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Seth Moulton","MA","college_elite",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Sharice Davids","KS","college_public",0,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,1,0,0,1,NA,"Democrat"
-"Sheila Jackson Lee","TX","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"F","Democrat"
-"Steny H. Hoyer","MD","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,"M","Democrat"
-"Stephanie Murphy","FL","college_public",0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Stephen F. Lynch","MA","college_private",0,1,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Steve Chabot","OH","college_public",0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Steve Cohen","TN","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"M","Democrat"
-"Steve King","IA","college_none",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Steve Scalise","LA","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,"M","Republican"
-"Steve Stivers","OH","college_public",0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Steve Watkins","KS","college_public",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican"
-"Steve Womack","AR","college_public",0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Steven Horsford","NV","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat"
-"Steven M. Palazzo","MS","college_public",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Susan A. Davis","CA","college_public",0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Susan W. Brooks","IN","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"F","Republican"
-"Susan Wild","PA","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,NA,"Democrat"
-"Susie Lee","NV","college_private",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Suzan DelBene","WA","college_private",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"F","Democrat"
-"Suzanne Bonamici","OR","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"F","Democrat"
-"Sylvia Garcia","TX","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,1,1,NA,"Democrat"
-"T.J. Cox","CA","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,NA,"Democrat"
-"Ted Budd","NC","college_public",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Ted Deutch","FL","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Ted Lieu","CA","college_elite",0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat"
-"Ted Yoho","FL","college_public",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Terri Sewell","AL","college_elite",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Thomas Massie","KY","college_elite",0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Thomas R. Suozzi","NY","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Democrat"
-"Tim Burchett","TN","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Republican"
-"Tim Ryan","OH","college_public",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Tim Walberg","MI","college_private",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,"M","Republican"
-"Tom Cole","OK","college_private",0,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Republican"
-"Tom Emmer","MN","college_public",0,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Tom Graves","GA","college_public",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican"
-"Tom Malinowski","NJ","college_public",0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat"
-"Tom Marino","PA","college_private",0,1,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Tom McClintock","CA","college_public",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Tom O'Halleran","AZ","college_none",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"Tom Reed","NY","college_private",0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Tom Rice","SC","college_public",0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Tony Cárdenas","CA","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,1,0,"M","Democrat"
-"Trent Kelly","MS","college_public",0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican"
-"Trey Hollingsworth","IN","college_elite",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Troy Balderson","OH","college_none",0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Tulsi Gabbard","HI","college_private",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat"
-"Val Demings","FL","college_public",0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat"
-"Van Taylor","TX","college_elite",0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,1,NA,"Republican"
-"Vern Buchanan","FL","college_private",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"Veronica Escobar","TX","college_public",0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,1,NA,"Democrat"
-"Vicente Gonzalez","TX","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat"
-"Vicky Hartzler","MO","college_public",0,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Republican"
-"Virginia Foxx","NC","college_public",0,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Republican"
-"Walter B. Jones","NC","college_private",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican"
-"Warren Davidson","OH","college_public",0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican"
-"Will Hurd","TX","college_public",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican"
-"William Lacy Clay","MO","college_public",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Democrat"
-"William Timmons","SC","college_private",0,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,NA,"Republican"
-"Xochitl Torres Small","NM","college_private",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat"
-"Yvette D. Clarke","NY","college_none",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
-"Zoe Lofgren","CA","college_elite",0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat"
+"full_name","state","edu_med","edu_law","edu_masters","edu_doctorate","work_bluecollar","work_business","work_education","work_farming","work_lawenforcement","work_lobbying","work_media","work_medicine","work_military","work_nonprofits","work_privatelaw","work_realestate","work_religiousleader","work_science","work_sports","gov_fedstate","gov_local","gov_none","gov_publiclawyerjudge","gov_stateleg","new","gender","party","college_none","college_public","college_private","college_elite"
+"Abby Finkenauer","IA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,0,1,0
+"Abigail Spanberger","VA","",0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Adam Kinzinger","IL","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Adam Schiff","CA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Democrat",0,0,0,1
+"Adam Smith","WA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Democrat",0,0,1,0
+"Adrian Smith","NE","",0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Adriano Espaillat","NY","",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Al Green","TX","",1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat",1,0,0,0
+"Al Lawson","FL","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Alan Lowenthal","CA","",0,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Albio Sires","NJ","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Alcee L. Hastings","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat",0,0,1,0
+"Alex Mooney","WV","",0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,0,1
+"Alexandria Ocasio-Cortez","NY","",0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Alma Adams","NC","",0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,1,0,0
+"Ami Bera","CA","1",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"André Carson","IN","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Andy Barr","KY","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,1,0,0
+"Andy Biggs","AZ","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Andy Harris","MD","1",0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Andy Kim","NJ","",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,0,0,1
+"Andy Levin","MI","",1,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,0,1,0
+"Angie Craig","MN","",0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Ann Kirkpatrick","AZ","",1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Democrat",0,1,0,0
+"Ann McLane Kuster","NH","",1,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,0,0,1
+"Ann Wagner","MO","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"F","Republican",0,1,0,0
+"Anna Eshoo","CA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",1,0,0,0
+"Anthony Brindisi","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,0,1,0
+"Anthony G. Brown","MD","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Anthony Gonzalez","OH","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,NA,"Republican",0,1,0,0
+"Antonio Delgado","NY","",1,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Austin Scott","GA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Ayanna Pressley","MA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Democrat",1,0,0,0
+"Barbara Lee","CA","",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,0,1,0
+"Barry Loudermilk","GA","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Ben Cline","VA","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Republican",0,0,1,0
+"Ben McAdams","UT","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,1,0,0
+"Ben Ray Luján","NM","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Democrat",0,1,0,0
+"Bennie G. Thompson","MS","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Betty McCollum","MN","",0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"Bill Flores","TX","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Bill Foster","IL","",0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"Bill Huizenga","MI","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Bill Johnson","OH","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Bill Keating","MA","",1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,"M","Democrat",0,0,1,0
+"Bill Pascrell Jr.","NJ","",0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Bill Posey","FL","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican",1,0,0,0
+"Billy Long","MO","",0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,"M","Republican",1,0,0,0
+"Blaine Luetkemeyer","MO","",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,"M","Republican",0,1,0,0
+"Bob Gibbs","OH","",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",1,0,0,0
+"Bobby L. Rush","IL","",0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Bobby Scott","VA","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Bonnie Watson Coleman","NJ","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Brad Schneider","IL","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,1,0
+"Brad Sherman","CA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"M","Democrat",0,1,0,0
+"Brad Wenstrup","OH","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Bradley Byrne","AL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,"M","Republican",0,0,0,1
+"Brenda Lawrence","MI","",0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,1,0,0
+"Brendan F. Boyle","PA","",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Brett Guthrie","KY","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Brian Babin","TX","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,"M","Republican",0,1,0,0
+"Brian Fitzpatrick","PA","",1,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"Brian Higgins","NY","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,1,0,0
+"Brian Mast","FL","",0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Bruce Westerman","AR","",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Bryan Stell","WI","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,NA,"Republican",0,0,1,0
+"C. A. Dutch Ruppersberger","MD","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"M","Democrat",1,0,0,0
+"Carol Miller","WV","",0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,NA,"Republican",0,0,1,0
+"Carolyn B. Maloney","NY","",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,0,1,0
+"Cathy McMorris Rodgers","WA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Republican",0,0,1,0
+"Cedric L. Richmond","LA","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Charlie Crist","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,1,0,"M","Democrat",0,1,0,0
+"Chellie Pingree","ME","",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"Cheri Bustos","IL","",0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,1,0,0
+"Chip Roy","TX","",1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,NA,"Republican",0,1,0,0
+"Chris Collins","NY","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Chris Pappas","NH","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,NA,"Democrat",0,0,0,1
+"Chris Stewart","UT","",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Chrissy Houlahan","PA","",0,1,0,0,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,0,1
+"Christopher H. Smith","NJ","",0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Chuck Fleischmann","TN","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Cindy Axne","IA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,1,0,0
+"Clay Higgins","LA","",0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",1,0,0,0
+"Colin Allred","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,NA,"Democrat",0,0,1,0
+"Collin C. Peterson","MN","",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Conor Lamb","PA","",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,NA,"Democrat",0,0,0,1
+"Dan Crenshaw","TX","",0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,0,1,0
+"Dan Meuser","PA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Republican",0,0,0,1
+"Dan Newhouse","WA","",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Republican",0,1,0,0
+"Daniel Lipinski","IL","",0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,1,0
+"Daniel T. Kildee","MI","",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"Daniel Webster","FL","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Danny K. Davis","IL","",0,1,1,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"Darin LaHood","IL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Republican",0,0,1,0
+"Darren Soto","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,1,0,0
+"David B. McKinley","WV","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"David E. Price","NC","",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"David Joyce","OH","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"David Kustoff","TN","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,"M","Republican",0,1,0,0
+"David Loebsack","IA","",0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"David N. Cicilline","RI","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"M","Democrat",0,0,0,1
+"David Rouzer","NC","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"David Schweikert","AZ","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0,"M","Republican",0,1,0,0
+"David Scott","GA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"David Trone","MD","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Dean Phillips","MN","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,0,1
+"Deb Haaland","NM","",1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Democrat",0,1,0,0
+"Debbie Dingell","MI","",0,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,0,1,0
+"Debbie Lesko","AZ","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Debbie Mucarsel-Powell","FL","",0,1,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Debbie Wasserman Schultz","FL","",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Denny Heck","WA","",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Denver Riggleman","VA","",0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,1,0,0
+"Derek Kilmer","WA","",0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Devin Nunes","CA","",0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Diana DeGette","CO","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,0,1,0
+"Dina Titus","NV","",0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Don Bacon","NE","",0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Don Beyer Jr.","VA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Democrat",0,0,1,0
+"Don Young","AK","",0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Donald M. Payne Jr.","NJ","",0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",1,0,0,0
+"Donald McEachin","VA","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Donald Norcross","NJ","",0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",1,0,0,0
+"Donna Shalala","FL","",0,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,0,1,0
+"Doris O. Matsui","CA","",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,1,0,0
+"Doug Collins","GA","",1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Doug LaMalfa","CA","",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Doug Lamborn","CO","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Drew Ferguson IV","GA","1",0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,"M","Republican",1,0,0,0
+"Duncan Hunter","CA","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Dusty Johnson","SD","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Republican",0,1,0,0
+"Dwight Evans","PA","",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Earl Blumenauer","OR","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Earl L. Carter","GA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Republican",0,1,0,0
+"Ed Case","HI","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,0,1,0
+"Ed Perlmutter","CO","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Eddie Bernice Johnson","TX","",0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,0,1,0
+"Elaine Luria","VA","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Elijah E. Cummings","MD","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Eliot L. Engel","NY","",1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Elise M. Stefanik","NY","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Republican",0,0,0,1
+"Elissa Slotkin","MI","",0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,0,0,1
+"Emanuel Cleaver","MO","",0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"Eric Swalwell","CA","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,"M","Democrat",0,1,0,0
+"Filemon Vela","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,1,0
+"Francis Rooney","FL","",1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican",0,0,1,0
+"Frank D. Lucas","OK","",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Frank Pallone Jr.","NJ","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Fred Upton","MI","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Frederica S. Wilson","FL","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"French Hill","AR","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican",0,0,1,0
+"G. K. Butterfield","NC","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat",0,1,0,0
+"Garret Graves","LA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican",1,0,0,0
+"Gary Palmer","AL","",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"George Holding","NC","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"Gerry Connolly","VA","",0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Gil Cisneros","CA","",0,1,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Glenn Grothman","WI","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Glenn Thompson","PA","",0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Grace F. Napolitano","CA","",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",1,0,0,0
+"Grace Meng","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Greg Gianforte","MT","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Greg Pence","IN","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,0,1,0
+"Greg Stanton","AZ","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,NA,"Democrat",0,0,1,0
+"Greg Steube","FL","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Greg Walden","OR","",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Gregory W. Meeks","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,"M","Democrat",0,0,1,0
+"Gus M. Bilirakis","FL","",1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Guy Reschenthaler","PA","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Republican",0,1,0,0
+"Gwen Moore","WI","",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,0,1,0
+"Hakeem Jeffries","NY","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Haley Stevens","MI","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Hank Johnson","GA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,1,NA,"Democrat",0,0,1,0
+"Harley Rouda","CA","",1,1,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Harold Rogers","KY","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,1,0,0
+"Henry Cuellar","TX","",1,1,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Ilhan Omar","MN","",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,1,0,0
+"Jack Bergman","MI","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican",0,0,1,0
+"Jackie Speier","CA","",1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,1,0,0
+"Jackie Walorski","IN","",0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Republican",0,0,1,0
+"Jahana Hayes","CT","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Jaime Herrera Beutler","WA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Republican",0,1,0,0
+"James Comer","KY","",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Republican",0,1,0,0
+"James E. Clyburn","SC","",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"M","Democrat",0,1,0,0
+"Jamie Raskin","MD","",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,"M","Democrat",0,0,0,1
+"Jan Schakowsky","IL","",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Jared Golden","ME","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,0,1,0
+"Jared Huffman","CA","",1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,1,0,0
+"Jason Crow","CO","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Jason Smith","MO","",1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Jeff Duncan","SC","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Jeff Fortenberry","NE","",0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Jeff Van Drew","NJ","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,1,0,0
+"Jennifer Wexton","VA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,NA,"Democrat",0,1,0,0
+"Jerrold Nadler","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Jerry McNerney","CA","",0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"Jésus Garcia","IL","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,1,0,0
+"Jim Baird","IN","",0,1,1,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Republican",0,1,0,0
+"Jim Banks","IN","",0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Jim Cooper","TN","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"Jim Costa","CA","",0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Jim Hagedorn","MN","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,0,1,0
+"Jim Himes","CT","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,0,1
+"Jim Jordan","OH","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Jim Langevin","RI","",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Jim McGovern","MA","",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,1,0
+"Jim Sensenbrenner","WI","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,0,1
+"Jimmy Gomez","CA","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,1,0,0
+"Jimmy Panetta","CA","",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,"M","Democrat",0,1,0,0
+"Joaquin Castro","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Jodey C. Arrington","TX","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Jody B. Hice","GA","",0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Joe Courtney","CT","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Joe Cunningham","SC","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Joe Neguse","CO","",1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,1,0,0
+"Joe Wilson","SC","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,1,0,"M","Republican",0,0,1,0
+"John Carter","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,1,0,0
+"John Garamendi","CA","",0,1,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,"M","Democrat",0,1,0,0
+"John Joyce","PA","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,1,0,0
+"John Katko","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"John Larson","CT","",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,1,0,0
+"John Lewis","GA","",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"John Moolenaar","MI","",0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,"M","Republican",0,0,1,0
+"John R. Curtis","UT","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Republican",0,0,1,0
+"John Ratcliffe","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"M","Republican",0,0,1,0
+"John Rose","TN","",1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Republican",0,1,0,0
+"John Rutherford","FL","",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"John Sarbanes","MD","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,0,1
+"John Shimkus","IL","",0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"John Yarmuth","KY","",0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,0,1
+"José E. Serrano","NY","",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",1,0,0,0
+"Joseph Morelle","NY","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,1,0,0
+"Joseph P. Kennedy III","MA","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"M","Democrat",0,0,0,1
+"Josh Gottheimer","NJ","",1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,0,1
+"Josh Harder","CA","",0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,0,1
+"Joyce Beatty","OH","",0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,1,0,0
+"Juan Vargas","CA","",1,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Judy Chu","CA","",0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,"F","Democrat",0,1,0,0
+"Julia Brownley","CA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"Justin Amash","MI","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Karen Bass","CA","",0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Katherine M. Clark","MA","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,1,1,0,"F","Democrat",0,0,1,0
+"Kathleen M. Rice","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"F","Democrat",0,0,1,0
+"Kathy Castor","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,0,1,0
+"Katie Hill","CA","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Katie Porter","CA","",1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,0,0,1
+"Kay Granger","TX","",0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"F","Republican",0,0,1,0
+"Kelly Armstrong","ND","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Ken Buck","CO","",1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,0,1
+"Ken Calvert","CA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Kendra Horn","OK","",1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Kenny Marchant","TX","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican",0,0,1,0
+"Kevin Brady","TX","",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Kevin Hern","OK","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,1,NA,"Republican",0,1,0,0
+"Kevin McCarthy","CA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Kim Schrier","WA","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Kurt Schrader","OR","1",0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Lance Gooden","TX","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Larry Bucshon","IN","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Lauren Underwood","IL","",0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Lee M. Zeldin","NY","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Linda T. Sánchez","CA","",1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,1,0,0
+"Lisa Blunt Rochester","DE","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,"F","Democrat",0,0,1,0
+"Liz Cheney","WY","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"F","Republican",0,0,1,0
+"Lizzie Pannill Fletcher","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Lloyd Doggett","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,"M","Democrat",0,1,0,0
+"Lloyd Smucker","PA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",1,0,0,0
+"Lois Frankel","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"F","Democrat",0,0,1,0
+"Lori Trahan","MA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,0,1,0
+"Lou Correa","CA","",1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0,"M","Democrat",0,1,0,0
+"Louie Gohmert","TX","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,1,0,0
+"Lucille Roybal-Allard","CA","",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Lucy McBath","GA","",0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Mac Thornberry","TX","",1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"M","Republican",0,1,0,0
+"Madeleine Dean","PA","",1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,1,1,NA,"Democrat",0,0,1,0
+"Marc Veasey","TX","",0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Marcia L. Fudge","OH","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,1,0,0
+"Marcy Kaptur","OH","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,1,0,0
+"Mario Diaz-Balart","FL","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",1,0,0,0
+"Mark Amodei","NV","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Mark DeSaulnier","CA","",0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Mark Green","TN","1",0,1,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Mark Meadows","NC","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",1,0,0,0
+"Mark Pocan","WI","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,1,0,0
+"Mark Takano","CA","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,0,1
+"Mark Walker","NC","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Markwayne Mullin","OK","",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",1,0,0,0
+"Martha Roby","AL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"F","Republican",0,0,1,0
+"Mary Gay Scanlon","PA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,NA,"Democrat",0,0,1,0
+"Matt Cartwright","PA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,1,0
+"Matt Gaetz","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Max Rose","NY","",0,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Maxine Waters","CA","",0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,1,0,0
+"Michael C. Burgess","TX","1",0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Michael Cloud","TX","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,0,1,0
+"Michael Guest","MS","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,NA,"Republican",0,1,0,0
+"Michael McCaul","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"Michael R. Turner","OH","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,0,1,0
+"Michael Waltz","FL","",0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,1,0,0
+"Mike Bost","IL","",0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",1,0,0,0
+"Mike Conaway","TX","",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,1,NA,"Republican",0,1,0,0
+"Mike Doyle","PA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"Mike Gallagher","WI","",0,1,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,0,1
+"Mike Johnson","LA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Mike Kelly","PA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,0,1,0
+"Mike Levin","CA","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,0,1
+"Mike Quigley","IL","",1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Mike Rogers","AL","",1,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,1,1,0,"M","Republican",0,1,0,0
+"Mike Simpson","ID","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Mike Thompson","CA","",0,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Mikie Sherrill","NJ","",1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,NA,"Democrat",0,1,0,0
+"Mo Brooks","AL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"M","Republican",0,0,0,1
+"Morgan Griffith","VA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Nancy Pelosi","CA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,0,1,0
+"Nanette Diaz Barragán","CA","",1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,1,0,0
+"Neal Dunn","FL","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Nita Lowey","NY","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"F","Democrat",0,0,1,0
+"Norma J. Torres","CA","",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"Nydia M. Velázquez","NY","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"F","Democrat",0,1,0,0
+"Patrick T. McHenry","NC","",0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,"M","Republican",0,0,1,0
+"Paul Cook","CA","",0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Paul Gosar","AZ","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Paul Mitchell","MI","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Paul Tonko","NY","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,1,0,"M","Democrat",0,0,1,0
+"Pete Aguilar","CA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Pete Olson","TX","",1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Pete Stauber","MN","",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,NA,"Republican",0,1,0,0
+"Peter DeFazio","OR","",0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Peter J. Visclosky","IN","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"Peter T. King","NY","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,"M","Republican",0,0,1,0
+"Peter Welch","VT","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"M","Democrat",0,0,1,0
+"Phil Roe","TN","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Republican",0,1,0,0
+"Pramila Jayapal","WA","",0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,"F","Democrat",0,0,1,0
+"Raja Krishnamoorthi","IL","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,"M","Democrat",0,0,0,1
+"Ralph Abraham","LA","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Ralph Norman","SC","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Randy Weber","TX","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Rashida Tlaib","MI","",1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,1,0,0
+"Raúl M. Grijalva","AZ","",0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"Raul Ruiz","CA","1",0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"Richard E. Neal","MA","",0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Richard Hudson","NC","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Rick Crawford","AR","",0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Rick Larsen","WA","",0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Rick W. Allen","GA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Ro Khanna","CA","",1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,"M","Democrat",0,0,0,1
+"Rob Bishop","UT","",0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Rob Wittman","VA","",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Rob Woodall","GA","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Robert B. Aderholt","AL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"Robert E. Latta","OH","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Robin L. Kelly","IL","",0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"Rodney Davis","IL","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Roger W. Marshall","KS","1",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,"M","Republican",0,1,0,0
+"Roger Williams","TX","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,"M","Republican",0,0,1,0
+"Ron Estes","KS","",0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,"M","Republican",0,1,0,0
+"Ron Kind","WI","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Democrat",0,0,0,1
+"Ron Wright","TX","",0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,NA,"Republican",1,0,0,0
+"Rosa L. DeLauro","CT","",0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,0,1,0
+"Ross Spano","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Ruben Gallego","AZ","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,0,1
+"Russ Fulcher","ID","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,NA,"Republican",0,1,0,0
+"Salud Carbajal","CA","",0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,1,0,0
+"Sam Graves","MO","",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Sanford D. Bishop Jr.","GA","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Scott DesJarlais","TN","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Scott Perry","PA","",0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Scott Peters","CA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,1,0,0,"M","Democrat",0,0,0,1
+"Scott R. Tipton","CO","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Sean Casten","IL","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Sean P. Duffy","WI","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"Sean Patrick Maloney","NY","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,1,0,0
+"Seth Moulton","MA","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,0,1
+"Sharice Davids","KS","",1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Sheila Jackson Lee","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"F","Democrat",0,0,0,1
+"Steny H. Hoyer","MD","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Stephanie Murphy","FL","",0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,1,0,0
+"Stephen F. Lynch","MA","",1,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,0,1,0
+"Steve Chabot","OH","",1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Steve Cohen","TN","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,"M","Democrat",0,0,1,0
+"Steve King","IA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",1,0,0,0
+"Steve Scalise","LA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Steve Stivers","OH","",0,1,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Steve Watkins","KS","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,NA,"Republican",0,1,0,0
+"Steve Womack","AR","",0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Steven Horsford","NV","",0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,NA,"Democrat",0,1,0,0
+"Steven M. Palazzo","MS","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Susan A. Davis","CA","",0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,1,0,0
+"Susan W. Brooks","IN","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,"F","Republican",0,1,0,0
+"Susan Wild","PA","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,NA,"Democrat",0,0,1,0
+"Susie Lee","NV","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Suzan DelBene","WA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,"F","Democrat",0,0,1,0
+"Suzanne Bonamici","OR","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,"F","Democrat",0,1,0,0
+"Sylvia Garcia","TX","",1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,1,1,NA,"Democrat",0,1,0,0
+"T.J. Cox","CA","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,NA,"Democrat",0,1,0,0
+"Ted Budd","NC","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Ted Deutch","FL","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Ted Lieu","CA","",1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,"M","Democrat",0,0,0,1
+"Ted Yoho","FL","1",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"Terri Sewell","AL","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,0,0,1
+"Thomas Massie","KY","",0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,0,0,1
+"Thomas R. Suozzi","NY","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Democrat",0,0,1,0
+"Tim Burchett","TN","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,NA,"Republican",0,1,0,0
+"Tim Ryan","OH","",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"Tim Walberg","MI","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Tom Cole","OK","",0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,"M","Republican",0,0,1,0
+"Tom Emmer","MN","",1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Tom Graves","GA","",0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,"M","Republican",0,1,0,0
+"Tom Malinowski","NJ","",0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,NA,"Democrat",0,1,0,0
+"Tom Marino","PA","",1,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,0,1,0
+"Tom McClintock","CA","",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,1,0,0
+"Tom O'Halleran","AZ","",0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"M","Democrat",1,0,0,0
+"Tom Reed","NY","",1,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,"M","Republican",0,0,1,0
+"Tom Rice","SC","",1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Tony Cárdenas","CA","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,1,0,"M","Democrat",0,1,0,0
+"Trent Kelly","MS","",1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,"M","Republican",0,1,0,0
+"Trey Hollingsworth","IN","",0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,0,1
+"Troy Balderson","OH","",0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,NA,"Republican",1,0,0,0
+"Tulsi Gabbard","HI","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,"F","Democrat",0,0,1,0
+"Val Demings","FL","",0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"F","Democrat",0,1,0,0
+"Van Taylor","TX","",0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,1,NA,"Republican",0,0,0,1
+"Vern Buchanan","FL","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,0,1,0
+"Veronica Escobar","TX","",0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,1,NA,"Democrat",0,1,0,0
+"Vicente Gonzalez","TX","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,"M","Democrat",0,0,1,0
+"Vicky Hartzler","MO","",0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,"F","Republican",0,1,0,0
+"Virginia Foxx","NC","",0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,"F","Republican",0,1,0,0
+"Walter B. Jones","NC","",0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,"M","Republican",0,0,1,0
+"Warren Davidson","OH","",0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,"M","Republican",0,1,0,0
+"Will Hurd","TX","",0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,"M","Republican",0,1,0,0
+"William Lacy Clay","MO","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,"M","Democrat",0,1,0,0
+"William Timmons","SC","",1,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,NA,"Republican",0,0,1,0
+"Xochitl Torres Small","NM","",1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,NA,"Democrat",0,0,1,0
+"Yvette D. Clarke","NY","",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,"F","Democrat",1,0,0,0
+"Zoe Lofgren","CA","",1,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,"F","Democrat",0,0,0,1

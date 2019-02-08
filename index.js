@@ -1,4 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
+// Helper functions
 // Datasets, data manipulation functions
 var dataset_ind; // dataset with individuals as rows
 var dataset_counts; // dataset with topline counts for each experience
@@ -13,7 +14,16 @@ function getOrder(counts_data) {
   }
   return(sorted_exp);
 }; // end getOrder
-
+function convertLabelToVariable(label) {
+  var labels = ["Public school", "Private school", "Elite school", "No Bachelor's degree","Law school", "Masters", "Medical school", "Doctorate","Business/ management","Private law","Military","Education","Nonprofits & unions","Medicine", "Real estate","Farming/ ranching","Media", "Lobbying/ activism","Blue-collar/ service job","Science/ engineering","Law enforcement","Sports","Religious leader","State legislature","Local government","No previous office","Federal or state office","Public lawyer or judge"];
+  var varNames = ["college_public","college_private","college_elite","college_none","edu_law", "edu_masters", "edu_med", "edu_doctorate", "work_business", "work_privatelaw", "work_military", "work_education", "work_nonprofits", "work_medicine", "work_realestate", "work_farming", "work_media", "work_lobbying", "work_bluecollar", "work_science", "work_lawenforcement", "work_sports", "work_religiousleader", "gov_stateleg", "gov_local", "gov_none", "gov_fedstate", "gov_publiclawyerjudge"];
+  return varNames[labels.indexOf(label)];
+}; // end convertLabelToVariable
+function clickFunction(currVar) {
+  svg.selectAll(".memberDots")
+     .filter(function(d) { return d[currVar]==1; })
+     .style("fill", brown)
+}; // end click function
 
 
 
@@ -61,7 +71,7 @@ var w = document.getElementById("chart-svg").getBoundingClientRect().width;
 // Define universal margins - first setting to figure out margins for the 2 views
 var margin_top = margin_bottom = margin_btwn = 20;
 var margin_btwnCol = 15;
-var w_labels = 100;
+var w_labels = 105;
 var circleRadius = 5;
 var circleSpace = 12;
 var circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
@@ -75,6 +85,10 @@ var h = margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*28 + margi
 document.getElementById("chart-svg").style.height = h;
 // Colors
 var green = d3.color("#377668");
+var brown = d3.color("#A45A25");
+
+
+
 
 
 function setup() {
@@ -104,7 +118,7 @@ function setup() {
   // Create dots
   for (var j=0; j<4; j++) {
     gCol.selectAll("collegeDots")
-        .data(dataset_ind.filter(function(d) { return d.edu_college==order_college[j]; }))
+        .data(dataset_ind.filter(function(d) { return d[order_college[j]]==1; }))
         .enter()
         .append("circle")
         .attr("class", "memberDots")
@@ -121,7 +135,7 @@ function setup() {
       .text(function(d) { return d; })
       .attr("x", 0)
       .attr("y", function(d,i) { return h_bigLabels + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
-      .call(wrap, w_labels-15);
+      .call(wrap, w_labels-20);
 
   // Graduate school experience
   // Get order
@@ -146,7 +160,7 @@ function setup() {
       .text(function(d) { return d; })
       .attr("x", 0)
       .attr("y", function(d,i) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
-      .call(wrap, w_labels-15);
+      .call(wrap, w_labels-20);
 
   // Career
   // Get order
@@ -171,7 +185,7 @@ function setup() {
       .text(function(d) { return d; })
       .attr("x", 0)
       .attr("y", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
-      .call(wrap, w_labels-15);
+      .call(wrap, w_labels-20);
 
   // Government
   // Get order
@@ -194,7 +208,7 @@ function setup() {
       .text(function(d) { return d; })
       .attr("x", 0)
       .attr("y", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
-      .call(wrap, w_labels-15);
+      .call(wrap, w_labels-20);
 
   // Mouseover feature
   svg.selectAll(".memberDots")
@@ -224,6 +238,22 @@ function setup() {
        d3.select(this).style("fill", green);
        svg.selectAll(".mouseover_text").remove();
        svg.selectAll(".mouseover_back").remove();
+     });
+
+  // Labels on click feature
+  svg.selectAll(".smallLabels")
+     .on("click", function() {
+       // Change all dots to green and labels to black initially
+       svg.selectAll(".smallLabels")
+          .style("fill", "black")
+          .style("font-weight", 400);
+       svg.selectAll(".memberDots").style("fill", green);
+
+       var selection = d3.select(this);
+       var currText = selection.text();
+       selection.style("font-weight", 500)
+                .style("fill", brown)
+       clickFunction(convertLabelToVariable(selection.text()));
      })
 
 }; // end setup
@@ -236,7 +266,6 @@ function rowConverter1(d) {
   return {
     full_name: d.full_name,
     state: d.state,
-    edu_college: d.edu_college,
     edu_med: parseInt(parseInt(d.edu_med)),
     edu_law: parseInt(d.edu_law),
     edu_masters: parseInt(d.edu_masters),
@@ -262,7 +291,11 @@ function rowConverter1(d) {
     gov_publiclawyerjudge: parseInt(d.gov_publiclawyerjudge),
     gov_stateleg: parseInt(d.gov_stateleg),
     new: parseInt(d.new),
-    party: d.party
+    party: d.party,
+    college_none: parseInt(d.college_none),
+    college_public: parseInt(d.college_public),
+    college_private: parseInt(d.college_private),
+    college_elite: parseInt(d.college_elite)
   }
 }; // end rowConverter1
 function rowConverter2(d) {
