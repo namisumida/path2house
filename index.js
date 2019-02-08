@@ -19,8 +19,8 @@ function init() {
   document.getElementById("chart-svg").style.height = h;
   // Colors
   var green = d3.color("#377668");
-  var brown = d3.color("#A45A25");
-  var yellow = d3.color("#D1A730");
+  var experienceColor = d3.color("#A45A25");
+  var stateColor = d3.color("#D1A730");
   // Topline orders
   var toplineOrder_college = getOrder(dataset_counts.slice(0,4));
   var toplineOrder_grad = getOrder(dataset_counts.slice(4,8));
@@ -161,7 +161,7 @@ function init() {
          var selection = d3.select(this);
          var currText = selection.text();
          selection.style("font-weight", 500)
-                  .style("fill", brown);
+                  .style("fill", experienceColor);
          clickSmallLabels(selection.data()[0]);
        })
 
@@ -178,7 +178,7 @@ function init() {
     var currX = parseInt(currDot.attr("cx"));
     var currY = parseInt(currDot.attr("cy"));
     // style changes
-    currDot.style("fill", yellow);
+    currDot.style("fill", "black");
     // tooltip
     svg.append("rect")
         .attr("class", "mouseover_back")
@@ -197,7 +197,8 @@ function init() {
   }; // end dotMouseover function
   function dotMouseout(currDot) {
     currDot.style("fill", function(d) {
-      if (d[currVar] == 1) { return brown; }
+      if (d[currVar] == 1) { return experienceColor; }
+      else if (d.state == currVar) { return stateColor; }
       else { return green; }
     });
     svg.selectAll(".mouseover_text").remove();
@@ -216,41 +217,53 @@ function init() {
     var varNames = ["college_public","college_private","college_elite","college_none","edu_law", "edu_masters", "edu_med", "edu_doctorate", "work_business", "work_privatelaw", "work_military", "work_education", "work_nonprofits", "work_medicine", "work_realestate", "work_farming", "work_media", "work_lobbying", "work_bluecollar", "work_science", "work_lawenforcement", "work_sports", "work_religiousleader", "gov_stateleg", "gov_local", "gov_none", "gov_fedstate", "gov_publiclawyerjudge"];
     return varNames[labels.indexOf(smallLabel)];
   }; // end convertLabelToVariable
-  function clickSmallLabels(smallLabel) { // When a small label is clicked...
-    currVar = convertLabelToVariable(smallLabel); // find var name of small label text
-    // order the dots
+  function updateDots(currVar, type) {
+    if (type == 'experience') {
+      var dataset_sorted = dataset_ind.sort(function(a,b) { return b[currVar]-a[currVar]; });
+    }
+    else {
+      var stateAbbrev = statesAbbrevList[statesList.indexOf(currVar)];
+      var dataset_sorted = dataset_ind.sort(function(a,b) { return (b.state==stateAbbrev) - (a.state==stateAbbrev); });
+    };
     // College
     for (var j=0; j<4; j++) {
       svg.selectAll("#"+toplineOrder_college[j])
-         .data(dataset_ind.filter(function(d) { return d[toplineOrder_college[j]]==1; }).sort(function(a,b) { return b[currVar]-a[currVar]; }))
-         .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-         .attr("cy", function(d,i) { return h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
+         .data(dataset_sorted.filter(function(d) { return d[toplineOrder_college[j]]==1; }))
+         .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+         .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
     };
     // Grad
     for (var j=0; j<4; j++) {
       svg.selectAll("#"+toplineOrder_grad[j])
-         .data(dataset_ind.filter(function(d) { return d[toplineOrder_grad[j]]==1; }).sort(function(a,b) { return b[currVar]-a[currVar]; }))
-         .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-         .attr("cy", function(d,i) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
+         .data(dataset_sorted.filter(function(d) { return d[toplineOrder_grad[j]]==1; }))
+         .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+         .attr("cy", function(d,i) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
     };
     // Career
     for (var j=0; j<15; j++) {
       svg.selectAll("#"+toplineOrder_career[j])
-         .data(dataset_ind.filter(function(d) { return d[toplineOrder_career[j]]==1; }).sort(function(a,b) { return b[currVar]-a[currVar]; }))
-         .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-         .attr("cy", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
+         .data(dataset_sorted.filter(function(d) { return d[toplineOrder_career[j]]==1; }))
+         .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+         .attr("cy", function(d,i) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
     };
     // Gov
-    for (var j=0; j<15; j++) {
+    for (var j=0; j<5; j++) {
       svg.selectAll("#"+toplineOrder_gov[j])
-         .data(dataset_ind.filter(function(d) { return d[toplineOrder_gov[j]]==1; }).sort(function(a,b) { return b[currVar]-a[currVar]; }))
-         .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-         .attr("cy", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
+         .data(dataset_sorted.filter(function(d) { return d[toplineOrder_gov[j]]==1; }))
+         .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+         .attr("cy", function(d,i) { return margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
     };
     // color the overlapped dots
     svg.selectAll(".memberDots")
-       .filter(function(d) { return d[currVar]==1; })
-       .style("fill", brown);
+       .style("fill", function(d) {
+         if (type == "experience" & d[currVar] == 1) { return experienceColor; }
+         else if (type == "state" & d.state == stateAbbrev) { return stateColor; }
+         else { return green; }
+       });
+  }; // end updateDots
+  function clickSmallLabels(smallLabel) { // When a small label is clicked...
+    currVar = convertLabelToVariable(smallLabel); // find var name of small label text
+    updateDots(currVar, "experience");
   }; // end click function
   function wrap(text, width) { // text wrapping function
     text.each(function () {
@@ -346,7 +359,6 @@ function init() {
           /*and and make the current item more visible:*/
           addActive(x);
           if (old > -1) {
-            x[old].style.color = 'black';
             x[old].style.backgroundColor = d3.color("#fff");
           }
         } else if (e.keyCode == 38) { //up
@@ -357,7 +369,6 @@ function init() {
           /*and and make the current item more visible:*/
           addActive(x);
           if (old > -1) {
-            x[old].style.color = 'black';
             x[old].style.backgroundColor = d3.color("#fff");
           }
         } else if (e.keyCode == 13) {
@@ -378,8 +389,8 @@ function init() {
       if (currentFocus < 0) currentFocus = (x.length - 1);
       /*add class "autocomplete-active":*/
       x[currentFocus].classList.add("autocomplete-active");
-      x[currentFocus].style.color = "white";
-      x[currentFocus].style.backgroundColor = green;
+      x[currentFocus].style.color = "black";
+      x[currentFocus].style.backgroundColor = stateColor;
     }; // end addActive
     function removeActive(x) {
       /*a function to remove the "active" class from all autocomplete items:*/
@@ -400,7 +411,6 @@ function init() {
     /*execute a function when someone clicks in the document:*/
     document.addEventListener("click", function (e) {
       closeAllLists(e.target);
-      document.getElementById("searchbar").value="";
     });
   }; // end autocomplete
   ////////////////////////////////////////////////////////////////////////////////
@@ -410,38 +420,12 @@ function init() {
 
   // State search bar
   var statesList = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
-  var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HA','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RH','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+  var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HI','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RH','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
   autocomplete(document.getElementById("searchbar-state"), statesList); // autocomplete function
   function filterByState(state) {
-    var dataset_ind_state = dataset_ind.filter(function(d) { return d.state == statesAbbrevList[statesList.indexOf(state)]; });
-
-    // Dots
-    // College
-    for (var j=0; j<4; j++) {
-      var collegeDots = svg.selectAll("#"+toplineOrder_college[j])
-                           .data(dataset_ind_state.filter(function(d) { return d[toplineOrder_college[j]]==1; }));
-      collegeDots.exit().remove();
-      var collegeDotsEnter = collegeDots.enter()
-                                        .append("circle")
-                                        .attr("class", "memberDots")
-                                        .attr("id", function(d) { return toplineOrder_college[j]; })
-                                        .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-                                        .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
-                                        .attr("r", circleRadius);
-      collegeDots = collegeDots.merge(collegeDotsEnter);
-      collegeDots.attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol);  })
-                 .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
-                 .attr("r", circleRadius);
-    };
-
-    // Allow mouseover feature on dots
-    svg.selectAll(".memberDots")
-       .on("mouseover", function(d) {
-         dotMouseover(d3.select(this));
-       })
-       .on("mouseout", function() {
-         dotMouseout(d3.select(this));
-       });
+    svg.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
+    currVar = statesAbbrevList[statesList.indexOf(state)];
+    updateDots(state, 'state');
   }; // end filterByState;
 
   // Representatives search bar
