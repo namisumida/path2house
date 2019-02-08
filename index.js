@@ -20,156 +20,134 @@ function init() {
   // Colors
   var green = d3.color("#377668");
   var brown = d3.color("#A45A25");
+  var yellow = d3.color("#D1A730");
   // Topline orders
   var toplineOrder_college = getOrder(dataset_counts.slice(0,4));
   var toplineOrder_grad = getOrder(dataset_counts.slice(4,8));
   var toplineOrder_career = getOrder(dataset_counts.slice(8,23));
   var toplineOrder_gov = getOrder(dataset_counts.slice(23,28));
+  var currVar;
 
   ////////////////////////////////////////////////////////////////////////////////
   function setup() {
     // FIRST VIEW: One column
-    // Set up groups
-    var gCol = svg.append("g").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
-
     // Create big labels
     var dataset_labels = ["COLLEGE", "GRADUATE SCHOOL", "CAREER", "POLITICAL OFFICE"];
-    gCol.selectAll(".gBigLabels")
+    svg.selectAll(".gBigLabels")
         .data(dataset_labels)
         .enter()
         .append("text")
         .attr("class", "bigLabels")
-        .attr("x", 0)
+        .attr("x", margin_left)
         .attr("y", function(d,i) {
-          if (i==0) { return 10; }
-          else if (i==1) { return h_bigLabels + (circlesPerCol*circleSpace + 10)*4 + margin_btwn; }
-          else if (i==2) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2; }
-          else if (i==3) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3; }
+          if (i==0) { return margin_top + 10; }
+          else if (i==1) { return margin_top + h_bigLabels + (circlesPerCol*circleSpace + 10)*4 + margin_btwn; }
+          else if (i==2) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2; }
+          else if (i==3) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3; }
         })
         .text(function(d) { return d; });
 
     // College experience
     // Create dots
     for (var j=0; j<4; j++) {
-      gCol.selectAll("collegeDots")
+      svg.selectAll("collegeDots")
           .data(dataset_ind.filter(function(d) { return d[toplineOrder_college[j]]==1; }))
           .enter()
           .append("circle")
           .attr("class", "memberDots")
           .attr("id", function(d) { return toplineOrder_college[j]; })
-          .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-          .attr("cy", function(d,i) { return h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
           .attr("r", circleRadius);
     };
     // Create labels
-    gCol.selectAll("labels")
+    svg.selectAll("labels")
         .data(["Public school", "Private school", "Elite school", "No Bachelor's degree"])
         .enter()
         .append("text")
         .attr("class", "smallLabels")
         .text(function(d) { return d; })
-        .attr("x", 0)
-        .attr("y", function(d,i) { return h_bigLabels + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
         .call(wrap, w_labels-20);
 
     // Graduate school experience
     // Create dots
     for (var j=0; j<4; j++) {
-      gCol.selectAll("gradDots")
+      svg.selectAll("gradDots")
           .data(dataset_ind.filter(function(d) { return d[toplineOrder_grad[j]]==1; }))
           .enter()
           .append("circle")
           .attr("class", "memberDots")
           .attr("id", function(d) { return toplineOrder_grad[j]; })
-          .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-          .attr("cy", function(d,i) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
           .attr("r", circleRadius);
     };
     // Create labels
-    gCol.selectAll("labels")
+    svg.selectAll("labels")
         .data(["Law school", "Masters", "Medical school", "Doctorate"])
         .enter()
         .append("text")
         .attr("class", "smallLabels")
         .text(function(d) { return d; })
-        .attr("x", 0)
-        .attr("y", function(d,i) { return h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
         .call(wrap, w_labels-20);
 
     // Career
     // Create dots
     for (var j=0; j<15; j++) {
-      gCol.selectAll("workDots")
+      svg.selectAll("workDots")
           .data(dataset_ind.filter(function(d) { return d[toplineOrder_career[j]]==1; }))
           .enter()
           .append("circle")
           .attr("class", "memberDots")
           .attr("id", function(d) { return toplineOrder_career[j]; })
-          .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-          .attr("cy", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
           .attr("r", circleRadius);
     };
     // Create labels
-    gCol.selectAll("labels")
+    svg.selectAll("labels")
         .data(["Business/ management","Private law","Military","Education","Nonprofits & unions","Medicine", "Real estate","Farming/ ranching","Media", "Lobbying/ activism","Blue-collar/ service job","Science/ engineering","Law enforcement","Sports","Religious leader"])
         .enter()
         .append("text")
         .attr("class", "smallLabels")
         .text(function(d) { return d; })
-        .attr("x", 0)
-        .attr("y", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
         .call(wrap, w_labels-20);
 
     // Government
     for (var j=0; j<5; j++) {
-      gCol.selectAll("govDots")
+      svg.selectAll("govDots")
           .data(dataset_ind.filter(function(d) { return d[toplineOrder_gov[j]]==1; }))
           .enter()
           .append("circle")
           .attr("class", "memberDots")
           .attr("id", function(d) { return toplineOrder_gov[j]; })
-          .attr("cx", function(d,i) { return w_labels + circleSpace*Math.floor(i/circlesPerCol); })
-          .attr("cy", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); })
           .attr("r", circleRadius);
     };
-    gCol.selectAll("labels")
+    svg.selectAll("labels")
         .data(["State legislature","Local government","No previous office","Federal or state office","Public lawyer or judge"])
         .enter()
         .append("text")
         .attr("class", "smallLabels")
         .text(function(d) { return d; })
-        .attr("x", 0)
-        .attr("y", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
         .call(wrap, w_labels-20);
 
     // Mouseover feature
     svg.selectAll(".memberDots")
-       .on("mouseover", function(d) {
-         var currDot = d3.select(this);
-         var currX = parseInt(currDot.attr("cx"));
-         var currY = parseInt(currDot.attr("cy"));
-         // style changes
-         currDot.style("fill", d3.color("#D1A730"));
-         // tooltip
-         gCol.append("rect")
-             .attr("class", "mouseover_back")
-             .attr("x", currX+10)
-             .attr("y", currY)
-             .attr("width", 100)
-             .attr("height", 20)
-             .style("fill", "white");
-
-         gCol.append("text")
-             .attr("class", "mouseover_text")
-             .text(function() { return d.full_name + " (" + d.state + ")"; })
-             .attr("x", currX+15)
-             .attr("y", currY+10)
-             .call(wrap, 95);
+       .on("mouseover", function() {
+         dotMouseover(d3.select(this));
        })
        .on("mouseout", function() {
-         d3.select(this).style("fill", green);
-         svg.selectAll(".mouseover_text").remove();
-         svg.selectAll(".mouseover_back").remove();
+         dotMouseout(d3.select(this));
        });
 
     // Labels on click feature
@@ -180,7 +158,6 @@ function init() {
             .style("fill", "black")
             .style("font-weight", 400);
          svg.selectAll(".memberDots").style("fill", green);
-
          var selection = d3.select(this);
          var currText = selection.text();
          selection.style("font-weight", 500)
@@ -189,11 +166,43 @@ function init() {
        })
 
   }; // end setup
+  function reset() {
+    currVar = "";
+  }; // end reset function
   function resize() {
 
   }; // end resize function
   ////////////////////////////////////////////////////////////////////////////////
   // Helper functions
+  function dotMouseover(currDot) {
+    var currX = parseInt(currDot.attr("cx"));
+    var currY = parseInt(currDot.attr("cy"));
+    // style changes
+    currDot.style("fill", yellow);
+    // tooltip
+    svg.append("rect")
+        .attr("class", "mouseover_back")
+        .attr("x", currX+10)
+        .attr("y", currY)
+        .attr("width", 100)
+        .attr("height", 20)
+        .style("fill", "white");
+
+    svg.append("text")
+        .attr("class", "mouseover_text")
+        .text(function() { return currDot.data()[0].full_name + " (" + currDot.data()[0].state + ")"; })
+        .attr("x", currX+15)
+        .attr("y", currY+10)
+        .call(wrap, 95);
+  }; // end dotMouseover function
+  function dotMouseout(currDot) {
+    currDot.style("fill", function(d) {
+      if (d[currVar] == 1) { return brown; }
+      else { return green; }
+    });
+    svg.selectAll(".mouseover_text").remove();
+    svg.selectAll(".mouseover_back").remove();
+  }; // end dotMouseout function
   function getOrder(counts_data) { // This function gets the order of small labels based on count
     var sorted_data = counts_data.sort(function(a,b) { return b.count-a.count; });
     var sorted_exp = [];
@@ -208,7 +217,7 @@ function init() {
     return varNames[labels.indexOf(smallLabel)];
   }; // end convertLabelToVariable
   function clickSmallLabels(smallLabel) { // When a small label is clicked...
-    var currVar = convertLabelToVariable(smallLabel); // find var name of small label text
+    currVar = convertLabelToVariable(smallLabel); // find var name of small label text
     // order the dots
     // College
     for (var j=0; j<4; j++) {
@@ -275,9 +284,173 @@ function init() {
       }
     });
   }; // end wrap function
+  function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.style.width = d3.select(".searchbar-input").style("width"); // fix width of list/items THIS IS ASSUMING STATE AND REP ARE SAME WIDTH
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += '<input type="hidden" value="' + arr[i] + '">';
+          /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:
+              Run update on graphic */
+              closeAllLists();
+              if (arr == statesList) {
+                filterByState(inp.value);//// TODO: FUNCTION TO UPDATE
+                document.getElementById("searchbar-state").value="";
+              }
+              else {
+                document.getElementById("searchbar-rep").value="";
+              }
+          });
+          a.appendChild(b);
+        }
+      }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          save old variable
+          increase the currentFocus variable:*/
+          old = currentFocus;
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+          if (old > -1) {
+            x[old].style.color = 'black';
+            x[old].style.backgroundColor = d3.color("#fff");
+          }
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          old = currentFocus;
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+          if (old > -1) {
+            x[old].style.color = 'black';
+            x[old].style.backgroundColor = d3.color("#fff");
+          }
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+    }); // end add event listener
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+      x[currentFocus].style.color = "white";
+      x[currentFocus].style.backgroundColor = green;
+    }; // end addActive
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }; // end removeActive
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }; // end closeAllLists
+    /*execute a function when someone clicks in the document:*/
+    document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+      document.getElementById("searchbar").value="";
+    });
+  }; // end autocomplete
   ////////////////////////////////////////////////////////////////////////////////
+  reset();
   setup();
   window.addEventListener("resize", resize);
+
+  // State search bar
+  var statesList = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+  var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HA','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RH','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+  autocomplete(document.getElementById("searchbar-state"), statesList); // autocomplete function
+  function filterByState(state) {
+    var dataset_ind_state = dataset_ind.filter(function(d) { return d.state == statesAbbrevList[statesList.indexOf(state)]; });
+
+    // Dots
+    // College
+    for (var j=0; j<4; j++) {
+      var collegeDots = svg.selectAll("#"+toplineOrder_college[j])
+                           .data(dataset_ind_state.filter(function(d) { return d[toplineOrder_college[j]]==1; }));
+      collegeDots.exit().remove();
+      var collegeDotsEnter = collegeDots.enter()
+                                        .append("circle")
+                                        .attr("class", "memberDots")
+                                        .attr("id", function(d) { return toplineOrder_college[j]; })
+                                        .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+                                        .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+                                        .attr("r", circleRadius);
+      collegeDots = collegeDots.merge(collegeDotsEnter);
+      collegeDots.attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol);  })
+                 .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+                 .attr("r", circleRadius);
+    };
+
+    // Allow mouseover feature on dots
+    svg.selectAll(".memberDots")
+       .on("mouseover", function(d) {
+         dotMouseover(d3.select(this));
+       })
+       .on("mouseout", function() {
+         dotMouseout(d3.select(this));
+       });
+  }; // end filterByState;
+
+  // Representatives search bar
+  var repsList = [];
+  for (var i=0; i<dataset_ind.length; i++) {
+    repsList.push(dataset_ind[i].full_name);
+  };
+  autocomplete(document.getElementById("searchbar-rep"), repsList); // autocomplete function
+
 }; // end init
 ////////////////////////////////////////////////////////////////////////////////
 function rowConverter1(d) {

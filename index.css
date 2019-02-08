@@ -53,6 +53,30 @@ body,html {
 .options-section {
   width: 33%;
 }
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  font-size: 13px;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid;
+  font-size: 13px;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #377668;
+  color: white;
+}
 button {
   background-color: none;
   font-size: 11px;
