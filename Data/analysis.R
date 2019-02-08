@@ -17,12 +17,11 @@ merged$college_none <- ifelse(merged$edu_college=="none", 1, 0)
 merged$college_public <- ifelse(merged$edu_college=="public", 1, 0)
 merged$college_private <- ifelse(merged$edu_college=="private", 1, 0)
 merged$college_elite <- ifelse(merged$edu_college=="elite", 1, 0)
-# remove unnecessary variables
-merged <- subset(merged,select = -c(party.x, party.y, first_name, last_name, edu_college))
 # convert to numeric 
-for (i in 4:27) {
+for (i in 7:30) {
   merged[,i] <- ifelse(merged[,i]=="1", 1, 0)
 }
+merged <- subset(merged,select = -c(party.x, party.y, first_name, last_name, edu_college))
 # export
 write.csv(merged, 'merged.csv', row.names = FALSE)
 
