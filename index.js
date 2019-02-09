@@ -19,14 +19,15 @@ function init() {
   document.getElementById("chart-svg").style.height = h;
   // Colors
   var green = d3.color("#377668");
-  var experienceColor = d3.color("#A45A25");
-  var stateColor = d3.color("#D1A730");
+  var experienceColor = d3.color("#A45A25"); // brown
+  var repColor = d3.color("#D1A730"); // yellow
+  var stateColor = d3.color("#743D47"); // plum
   // Topline orders
   var toplineOrder_college = getOrder(dataset_counts.slice(0,4));
   var toplineOrder_grad = getOrder(dataset_counts.slice(4,8));
   var toplineOrder_career = getOrder(dataset_counts.slice(8,23));
   var toplineOrder_gov = getOrder(dataset_counts.slice(23,28));
-  var currVar;
+  var currExp, currState, currRep, currValue;
 
   ////////////////////////////////////////////////////////////////////////////////
   function setup() {
@@ -155,7 +156,7 @@ function init() {
        .on("click", function() {
          // Change all dots to green and labels to black initially
          svg.selectAll(".smallLabels")
-            .style("fill", "black")
+            .style("fill", repColor)
             .style("font-weight", 400);
          svg.selectAll(".memberDots").style("fill", green);
          var selection = d3.select(this);
@@ -167,7 +168,7 @@ function init() {
 
   }; // end setup
   function reset() {
-    currVar = "";
+    currValue = "";
   }; // end reset function
   function resize() {
 
@@ -178,7 +179,7 @@ function init() {
     var currX = parseInt(currDot.attr("cx"));
     var currY = parseInt(currDot.attr("cy"));
     // style changes
-    currDot.style("fill", "black");
+    currDot.style("fill", repColor);
     // tooltip
     svg.append("rect")
         .attr("class", "mouseover_back")
@@ -197,8 +198,9 @@ function init() {
   }; // end dotMouseover function
   function dotMouseout(currDot) {
     currDot.style("fill", function(d) {
-      if (d[currVar] == 1) { return experienceColor; }
-      else if (d.state == currVar) { return stateColor; }
+      if (d[currValue] == 1) { return experienceColor; }
+      else if (d.state == currValue) { return stateColor; }
+      else if (d.full_name == currRep) { return repColor; }
       else { return green; }
     });
     svg.selectAll(".mouseover_text").remove();
@@ -217,12 +219,12 @@ function init() {
     var varNames = ["college_public","college_private","college_elite","college_none","edu_law", "edu_masters", "edu_med", "edu_doctorate", "work_business", "work_privatelaw", "work_military", "work_education", "work_nonprofits", "work_medicine", "work_realestate", "work_farming", "work_media", "work_lobbying", "work_bluecollar", "work_science", "work_lawenforcement", "work_sports", "work_religiousleader", "gov_stateleg", "gov_local", "gov_none", "gov_fedstate", "gov_publiclawyerjudge"];
     return varNames[labels.indexOf(smallLabel)];
   }; // end convertLabelToVariable
-  function updateDots(currVar, type) {
-    if (type == 'experience') {
-      var dataset_sorted = dataset_ind.sort(function(a,b) { return b[currVar]-a[currVar]; });
+  function updateDots(currValue) {
+    if (currExp) {
+      var dataset_sorted = dataset_ind.sort(function(a,b) { return b[currValue]-a[currValue]; });
     }
-    else {
-      var stateAbbrev = statesAbbrevList[statesList.indexOf(currVar)];
+    else if (currState){
+      var stateAbbrev = statesAbbrevList[statesList.indexOf(currValue)];
       var dataset_sorted = dataset_ind.sort(function(a,b) { return (b.state==stateAbbrev) - (a.state==stateAbbrev); });
     };
     // College
@@ -256,14 +258,16 @@ function init() {
     // color the overlapped dots
     svg.selectAll(".memberDots")
        .style("fill", function(d) {
-         if (type == "experience" & d[currVar] == 1) { return experienceColor; }
-         else if (type == "state" & d.state == stateAbbrev) { return stateColor; }
+         if (currExp & d[currValue] == 1) { return experienceColor; }
+         else if (currState & d.state == stateAbbrev) { return stateColor; }
          else { return green; }
        });
   }; // end updateDots
   function clickSmallLabels(smallLabel) { // When a small label is clicked...
-    currVar = convertLabelToVariable(smallLabel); // find var name of small label text
-    updateDots(currVar, "experience");
+    currValue = convertLabelToVariable(smallLabel); // find var name of small label text
+    currState, currRep = false;
+    currExp = true;
+    updateDots(currValue);
   }; // end click function
   function wrap(text, width) { // text wrapping function
     text.each(function () {
@@ -335,10 +339,11 @@ function init() {
               Run update on graphic */
               closeAllLists();
               if (arr == statesList) {
-                filterByState(inp.value);//// TODO: FUNCTION TO UPDATE
+                searchState(inp.value);
                 document.getElementById("searchbar-state").value="";
               }
               else {
+                searchRep(inp.value);
                 document.getElementById("searchbar-rep").value="";
               }
           });
@@ -413,20 +418,17 @@ function init() {
       closeAllLists(e.target);
     });
   }; // end autocomplete
-  ////////////////////////////////////////////////////////////////////////////////
-  reset();
-  setup();
-  window.addEventListener("resize", resize);
-
   // State search bar
   var statesList = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HI','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RH','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
   autocomplete(document.getElementById("searchbar-state"), statesList); // autocomplete function
-  function filterByState(state) {
+  function searchState(state) {
     svg.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
-    currVar = statesAbbrevList[statesList.indexOf(state)];
+    currValue = statesAbbrevList[statesList.indexOf(state)];
+    currState = true;
+    currRep, currExp = false;
     updateDots(state, 'state');
-  }; // end filterByState;
+  }; // end searchState;
 
   // Representatives search bar
   var repsList = [];
@@ -434,7 +436,24 @@ function init() {
     repsList.push(dataset_ind[i].full_name);
   };
   autocomplete(document.getElementById("searchbar-rep"), repsList); // autocomplete function
-
+  function searchRep(rep) {
+    // Change back to default (or as before)
+    svg.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
+    svg.selectAll(".memberDots")
+       .style("fill", function(d) {
+         if (currExp & d[currValue] == 1) { return experienceColor; }
+         else if (currState & d.state == currValue) { return stateColor; }
+         else { return green; }
+       });
+    currRep = rep;
+    svg.selectAll(".memberDots")
+       .filter(function(d) { return d.full_name == rep; })
+       .style("fill", repColor);
+  }; // end searchRep
+  ////////////////////////////////////////////////////////////////////////////////
+  reset();
+  setup();
+  window.addEventListener("resize", resize);
 }; // end init
 ////////////////////////////////////////////////////////////////////////////////
 function rowConverter1(d) {
