@@ -1,5 +1,5 @@
 function init() {
-  const svg = d3.select("#chart-svg");
+  var svg = d3.select("#chart-svg");
   // Defining margins
   var w = document.getElementById("chart-svg").getBoundingClientRect().width;
   // Define universal margins - first setting to figure out margins for the 2 views
@@ -156,7 +156,7 @@ function init() {
        .on("click", function() {
          // Change all dots to green and labels to black initially
          svg.selectAll(".smallLabels")
-            .style("fill", repColor)
+            .style("fill", "black")
             .style("font-weight", 400);
          svg.selectAll(".memberDots").style("fill", green);
          var selection = d3.select(this);
@@ -171,9 +171,8 @@ function init() {
     currValue = "";
   }; // end reset function
   function resize() {
-
   }; // end resize function
-  ////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////
   // Helper functions
   function dotMouseover(currDot) {
     var currX = parseInt(currDot.attr("cx"));
