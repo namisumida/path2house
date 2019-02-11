@@ -67,6 +67,7 @@ function init() {
         .enter()
         .append("text")
         .attr("class", "smallLabels")
+        .attr("id", "collegeSmallLabels")
         .text(function(d) { return d; })
         .attr("x", margin_left)
         .attr("y", function(d,i) { return margin_top + h_bigLabels + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
@@ -91,6 +92,7 @@ function init() {
         .enter()
         .append("text")
         .attr("class", "smallLabels")
+        .attr("id", "gradSmallLabels")
         .text(function(d) { return d; })
         .attr("x", margin_left)
         .attr("y", function(d,i) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
@@ -115,6 +117,7 @@ function init() {
         .enter()
         .append("text")
         .attr("class", "smallLabels")
+        .attr("id", "careerSmallLabels")
         .text(function(d) { return d; })
         .attr("x", margin_left)
         .attr("y", function(d,i) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
@@ -137,6 +140,7 @@ function init() {
         .enter()
         .append("text")
         .attr("class", "smallLabels")
+        .attr("id", "govSmallLabels")
         .text(function(d) { return d; })
         .attr("x", margin_left)
         .attr("y", function(d,i) { return margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
@@ -170,7 +174,76 @@ function init() {
   function reset() {
     currValue = "";
   }; // end reset function
-  function resize() {
+  function resize(width) {
+    // margins
+    circlesPerRowMax = Math.floor((width - w_labels - 20)/circleSpace); // min left and right margins = 10
+    circlesPerCol = Math.ceil(219/circlesPerRowMax); // max number of members in one category
+    circlesPerRow = Math.ceil(219/circlesPerCol);
+    margin_left = margin_right = (width - w_labels - circlesPerRow*circleSpace)/2;
+    h = margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*28 + margin_btwn*3 + margin_bottom;
+    document.getElementById("chart-svg").style.height = h;
+
+    // Labels
+    svg.selectAll(".bigLabels")
+        .attr("x", margin_left)
+        .attr("y", function(d,i) {
+          if (i==0) { return margin_top + 10; }
+          else if (i==1) { return margin_top + h_bigLabels + (circlesPerCol*circleSpace + 10)*4 + margin_btwn; }
+          else if (i==2) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2; }
+          else if (i==3) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3; }
+        });
+    // College experience
+    // Create dots
+    for (var j=0; j<4; j++) {
+      svg.selectAll("#" + toplineOrder_college[j])
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels + (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
+    };
+    // Create labels
+    svg.selectAll("#collegeSmallLabels")
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .text(function(d) { return d; })
+        .call(wrap, w_labels-20);
+
+    // Graduate school experience
+    for (var j=0; j<4; j++) {
+      svg.selectAll("#" +toplineOrder_grad[j])
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
+    };
+    // Create labels
+    svg.selectAll("#gradSmallLabels")
+        .text(function(d) { return d; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels*2 + (circlesPerCol*circleSpace + 10)*4 + margin_btwn + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .call(wrap, w_labels-20);
+
+    // Career
+    // Create dots
+    for (var j=0; j<15; j++) {
+      svg.selectAll("#" + toplineOrder_career[j])
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
+    };
+    // Create labels
+    svg.selectAll("#careerSmallLabels")
+        .text(function(d) { return d; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .call(wrap, w_labels-20);
+
+    // Government
+    for (var j=0; j<5; j++) {
+      svg.selectAll("#" + toplineOrder_gov[j])
+          .attr("cx", function(d,i) { return margin_left + w_labels + circleSpace*Math.floor(i/circlesPerCol); })
+          .attr("cy", function(d,i) { return margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
+    };
+    svg.selectAll("#govSmallLabels")
+        .text(function(d) { return d; })
+        .attr("x", margin_left)
+        .attr("y", function(d,i) { return margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .call(wrap, w_labels-20);
   }; // end resize function
   /////////////////////////////////////////////////////////////////////////////
   // Helper functions
@@ -268,6 +341,21 @@ function init() {
     currExp = true;
     updateDots(currValue);
   }; // end click function
+  function changeButtonStyle(button) {
+    button.style("background-color", green)
+          .style("color", "white")
+          .style("border", "none");
+    if (button.attr("value") == "party") { defaultButtonStyle(d3.select("#button-year")); }
+    else { defaultButtonStyle(d3.select("#button-party")); }
+  }; // end changeButtonStyle
+  function defaultButtonStyle(button) {
+    button.style("background-color", "white")
+          .style("color", "black")
+          .style("border", "1.5px solid");
+  }; // end defaultButtonStyle
+  function comparisonView(type) {
+    resize(document.getElementById("chart-svg").getBoundingClientRect().width/2);
+  }; // end comparisonView
   function wrap(text, width) { // text wrapping function
     text.each(function () {
       var text = d3.select(this),
@@ -339,12 +427,11 @@ function init() {
               closeAllLists();
               if (arr == statesList) {
                 searchState(inp.value);
-                document.getElementById("searchbar-state").value="";
               }
               else {
                 searchRep(inp.value);
-                document.getElementById("searchbar-rep").value="";
               }
+              inp.value="";
           });
           a.appendChild(b);
         }
@@ -449,10 +536,35 @@ function init() {
        .filter(function(d) { return d.full_name == rep; })
        .style("fill", repColor);
   }; // end searchRep
+
+  // Side-by-side comparison button clicks
+  // Party
+  d3.select("#button-party").on("click", function() {
+    var currButton = d3.select(this);
+    changeButtonStyle(currButton); // change button style
+    d3.select("#button-total").style("display", "inline"); // show total button
+    comparisonView(currButton.value);
+  });
+  // Year joined
+  d3.select("#button-year").on("click", function() {
+    var currButton = d3.select(this);
+    changeButtonStyle(currButton);
+    d3.select("#button-total").style("display", "inline");// show total button
+    comparisonView(currButton.value);
+  });
+  // Total button
+  d3.select("#button-total").on("click", function() {
+    d3.select(this).style("display", "none"); // make button disappear
+    defaultButtonStyle(d3.selectAll("button"));
+  });
+
+
   ////////////////////////////////////////////////////////////////////////////////
   reset();
   setup();
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", function() {
+    resize(document.getElementById("chart-svg").getBoundingClientRect().width);
+  });
 }; // end init
 ////////////////////////////////////////////////////////////////////////////////
 function rowConverter1(d) {

@@ -35,7 +35,10 @@ body,html {
   margin: auto;
 }
 .options-section {
-  width: 33%;
+  width: 30%;
+}
+#options-compare {
+  width: 40%;
 }
 .searchbar-input {
   width: 75%;
@@ -67,16 +70,20 @@ button {
   background-color: none;
   font-size: 11px;
   border-radius: 2px;
-  height: 20px;
-  font-weight: 600;
+  height: 23px;
+  font-weight: 500;
   border: 1.5px solid;
   cursor: pointer;
 }
 #button-party {
-  width: 45px;
+  width: 55px;
 }
 #button-year {
   width: 80px;
+}
+#button-total {
+  width: 80px;
+  display: none;
 }
 
 
@@ -115,11 +122,16 @@ button {
 #methods {
   margin: 0 auto;
   max-width: 900px;
+  margin-bottom: 100px;
 }
 #methods-text {
   font-size: 11px;
   font-weight: 300;
 }
+
+
+
+
 @media screen and (min-width:400px) {
   h1 {
     font-size: 30px;
