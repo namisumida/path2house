@@ -309,21 +309,28 @@ function init() {
     currDot.style("fill", repColor);
     // tooltip
     svg.select(parentNode)
+        .append("text")
+        .attr("class", "mouseover_text")
+        .attr("id", "mouseover_name")
+        .text(function() { return currDot.data()[0].full_name; })
+        .attr("x", currX+15)
+        .attr("y", currY+10);
+    svg.select(parentNode)
+       .append("text")
+       .attr("class", "mouseover_text")
+       .text(function() { return "(" + currDot.data()[0].state + ")"; })
+       .attr("x", currX+15)
+       .attr("y", currY+25);
+    svg.select(parentNode)
         .append("rect")
         .attr("class", "mouseover_back")
         .attr("x", currX+10)
         .attr("y", currY)
-        .attr("width", 100)
-        .attr("height", 20)
-        .style("fill", "white");
-
-    svg.select(parentNode)
-        .append("text")
-        .attr("class", "mouseover_text")
-        .text(function() { return currDot.data()[0].full_name + " (" + currDot.data()[0].state + ")"; })
-        .attr("x", currX+15)
-        .attr("y", currY+10)
-        .call(wrap, 95);
+        .attr("width", 10+svg.select("#mouseover_name").node().getBoundingClientRect().width)
+        .attr("height", 30)
+        .style("fill", "white")
+        .style("opacity", 0.9);
+    svg.selectAll(".mouseover_text").moveToFront();
   }; // end dotMouseover function
   function dotMouseout(currDot) {
     currDot.style("fill", function(d) {
@@ -555,6 +562,11 @@ function init() {
       }
     });
   }; // end wrap function
+  d3.selection.prototype.moveToFront = function() {
+        return this.each(function(){
+          this.parentNode.appendChild(this);
+        });
+  }; // end moveToFront function
   function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
