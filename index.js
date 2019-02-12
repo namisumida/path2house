@@ -23,14 +23,19 @@ function init() {
   var experienceColor = d3.color("#A45A25"); // brown
   var repColor = d3.color("#D1A730"); // yellow
   var stateColor = d3.color("#743D47"); // plum
+  var stateDarkColor = d3.rgb(86,46,53); // dark plum
+  var repLightColor = d3.rgb(227,128,115);
   var repColor = d3.color("#BF3B27");
+  var repDarkColor = d3.rgb(143,44,28);
+  var demLightColor = d3.rgb(133,167,190);
   var demColor = d3.color("#456A83");
+  var demDarkColor = d3.rgb(51,79,98);
   // Topline orders
   var toplineOrder_college = getOrder(dataset_counts.slice(0,4));
   var toplineOrder_grad = getOrder(dataset_counts.slice(4,8));
   var toplineOrder_career = getOrder(dataset_counts.slice(8,23));
   var toplineOrder_gov = getOrder(dataset_counts.slice(23,28));
-  var currExp, currState, currRep, currValue;
+  var currExp, currState, currRep, currValue, currView;
 
   ////////////////////////////////////////////////////////////////////////////////
   function setup() {
@@ -38,6 +43,18 @@ function init() {
     svg.append("g").attr("id", "labelGroup").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
     svg.append("g").attr("id", "col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + margin_top + ")");
     svg.append("g").attr("id", "col2");
+
+    // Column labels - no display for now
+    svg.append("text") // Dems label
+       .attr("class", "bigLabels")
+       .attr("id", "col1label")
+       .attr("y", margin_top)
+       .style("text-anchor", "middle");
+    svg.append("text") // Dems label
+       .attr("class", "bigLabels")
+       .attr("id", "col2label")
+       .attr("y", margin_top)
+       .style("text-anchor", "middle");
     // Create big labels
     var dataset_labels = ["COLLEGE", "GRADUATE SCHOOL", "CAREER", "POLITICAL OFFICE"];
     svg.select("#labelGroup")
@@ -183,11 +200,12 @@ function init() {
          selection.style("font-weight", 500)
                   .style("fill", experienceColor);
          clickSmallLabels(selection.data()[0]);
-       })
+       });
 
   }; // end setup
   function reset() {
     currValue = "";
+    currView = "total";
   }; // end reset function
   /*function resize() {
     // Labels
@@ -281,7 +299,7 @@ function init() {
         .attr("y", function(d,i) { return h_bigLabels*3 + (circlesPerCol*circleSpace + 10)*8 + margin_btwn*2 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
         .call(wrap, w_labels-20);
     svg.select("#labelGroup")
-        .selectAll(".govSmallLabels")
+        .selectAll("#govSmallLabels")
         .text(function(d) { return d; })
         .attr("x", 0)
         .attr("y", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
@@ -290,12 +308,14 @@ function init() {
   /////////////////////////////////////////////////////////////////////////////
   // Helper functions
   function dotMouseover(currDot) {
+    var parentNode = "#" + currDot.node().parentNode.id;
     var currX = parseInt(currDot.attr("cx"));
     var currY = parseInt(currDot.attr("cy"));
     // style changes
     currDot.style("fill", repColor);
     // tooltip
-    svg.append("rect")
+    svg.select(parentNode)
+        .append("rect")
         .attr("class", "mouseover_back")
         .attr("x", currX+10)
         .attr("y", currY)
@@ -303,7 +323,8 @@ function init() {
         .attr("height", 20)
         .style("fill", "white");
 
-    svg.append("text")
+    svg.select(parentNode)
+        .append("text")
         .attr("class", "mouseover_text")
         .text(function() { return currDot.data()[0].full_name + " (" + currDot.data()[0].state + ")"; })
         .attr("x", currX+15)
@@ -312,10 +333,34 @@ function init() {
   }; // end dotMouseover function
   function dotMouseout(currDot) {
     currDot.style("fill", function(d) {
-      if (d[currValue] == 1) { return experienceColor; }
-      else if (d.state == currValue) { return stateColor; }
-      else if (d.full_name == currRep) { return repColor; }
-      else { return green; }
+      if (d[currValue] == 1) { // experience
+        if (currView == "party") {
+          if (d.party == "Democrat") { return demDarkColor; }
+          else { return repDarkColor; }
+        }
+        else { return experienceDarkColor; }
+      }
+      else if (d.state == currValue) { // state
+        if (currView == "party") {
+          if (d.party == "Democrat") { return demDarkColor; }
+          else { return repDarkColor; }
+        }
+        else { return stateDarkColor; }
+      }
+      else if (d.full_name == currRep) {
+        if (currView == "party") {
+          if (d.party == "Democrat") { return demLightColor; }
+          else { return repLightColor; }
+        }
+        else { return stateDarkColor; }
+      }
+      else {
+        if (currView == "party") {
+          if (d.party == "Democrat") { return demColor; }
+          else { return repColor; }
+        }
+        else { return green; }
+      }
     });
     svg.selectAll(".mouseover_text").remove();
     svg.selectAll(".mouseover_back").remove();
@@ -390,6 +435,14 @@ function init() {
       govDots.attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
              .attr("cy", function(d,i) { return h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*23 + margin_btwn*3 + (circlesPerCol*circleSpace + 10)*j + circleSpace*(i%circlesPerCol); });
     };
+    // Mouseover feature
+    svg.selectAll(".memberDots")
+       .on("mouseover", function() {
+         dotMouseover(d3.select(this));
+       })
+       .on("mouseout", function() {
+         dotMouseout(d3.select(this));
+       });
   }; // end updateDots
   function colorDots() {
     svg.selectAll(".memberDots")
@@ -427,8 +480,8 @@ function init() {
     }
     else {
       var maxDots = 164;
-      var dataset_col1 = dataset_ind.filter(function(d) { return d.new == 1; });
-      var dataset_col2 = dataset_ind.filter(function(d) { return d.new == 0; });
+      var dataset_col1 = dataset_ind.filter(function(d) { return d.new == 0; });
+      var dataset_col2 = dataset_ind.filter(function(d) { return d.new == 1; });
     }
     var columnWidth = (w - 10 - w_labels - margin_btwnCol - 10)/2; // width for the two columns with circles
     circlesPerRowMax = Math.floor(columnWidth/circleSpace); // min left and right margins = 10
@@ -443,46 +496,63 @@ function init() {
     // column 1
     svg.select("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top + 15) + ")");
     updateDots(d3.select("#col1"), dataset_col1);
-    svg.select("#col1").selectAll(".memberDots").style("fill", demColor);
-    svg.append("text") // Dems label
-       .attr("class", "bigLabels")
-       .attr("id", "col1label")
+    svg.select("#col1")
+       .selectAll(".memberDots")
+       .style("fill", function() {
+         if (type == "party") { return demColor; }
+         else { return green; }
+       });
+    svg.select("#col1label").style("display", "inline"); // label
+    svg.select("#col1label")
        .text(function() {
          if (type == "party") { return "Democrats"; }
+         else { return "Joined before 2019"; }
        })
        .attr("x", function() {
          if (type == "party") { return margin_left + w_labels + 10*circleSpace; }
+         else { return margin_left + w_labels + 14*circleSpace; }
        })
-       .attr("y", margin_top)
-       .style("text-anchor", "middle")
-       .style("fill", demColor);
-    resizeLabels();
+       .style("fill", function() {
+         if (type == "party") { return demColor; }
+         else { return "black"; }
+       });
     // column 2
     svg.select("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top + 15) + ")");
     updateDots(d3.select("#col2"), dataset_col2);
-    svg.select("#col2").selectAll(".memberDots").style("fill", repColor);
-    svg.append("text")
-       .attr("class", "bigLabels")
-       .attr("id", "col2label")
+    svg.select("#col2") // dot colors
+       .selectAll(".memberDots")
+       .style("fill", function() {
+         if (type == "party") { return repColor; }
+         else { return green; }
+       });
+    svg.select("#col2label").style("display", "inline"); // labels
+    svg.select("#col2label")
        .text(function() {
          if (type == "party") { return "Republicans"; }
+         else { return "Joined in 2019"; }
        })
        .attr("x", function() {
          if (type == "party") { return margin_left + w_labels + columnWidth + margin_btwnCol + circlesPerRow*circleSpace/2; }
+         else { return margin_left + w_labels + columnWidth + margin_btwnCol + 5*circleSpace; }
        })
-       .attr("y", margin_top)
-       .style("text-anchor", "middle")
-       .style("fill", repColor);
+       .style("fill", function() {
+         if (type == "party") { return repColor; }
+         else { return "black"; }
+       });
+    // Resize Labels
+    resizeLabels();
   }; // end comparisonView
   function totalView() {
     svg.select("#col2").selectAll(".memberDots").remove();
-    svg.select("#col1label").remove();
-    svg.select("#col2label").remove();
+    svg.select("#col1label").style("display", "none");
+    svg.select("#col2label").style("display", "none");
     // move groups
     svg.select("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
     svg.select("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
     // update dot colors
     svg.selectAll(".memberDots").style("fill", green);
+    // resize labels
+    resizeLabels();
   }; // end totalView
   function wrap(text, width) { // text wrapping function
     text.each(function () {
@@ -669,6 +739,7 @@ function init() {
   // Side-by-side comparison button clicks
   // Party
   d3.select("#button-party").on("click", function() {
+    currView = "party";
     var currButton = d3.select(this);
     changeButtonStyle(currButton); // change button style
     d3.select("#button-total").style("display", "inline"); // show total button
@@ -676,6 +747,7 @@ function init() {
   });
   // Year joined
   d3.select("#button-year").on("click", function() {
+    currView = "year";
     var currButton = d3.select(this);
     changeButtonStyle(currButton);
     d3.select("#button-total").style("display", "inline");// show total button
@@ -683,9 +755,9 @@ function init() {
   });
   // Total button
   d3.select("#button-total").on("click", function() {
+    currView = "total";
     d3.select(this).style("display", "none"); // make button disappear
     defaultButtonStyle(d3.selectAll("button"));
-
     // Margins
     maxDots = 219;
     circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
