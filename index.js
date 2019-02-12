@@ -21,21 +21,15 @@ function init() {
   // Colors
   var green = d3.color("#377668");
   var experienceColor = d3.color("#A45A25"); // brown
-  var repColor = d3.color("#D1A730"); // yellow
-  var stateColor = d3.color("#743D47"); // plum
+  var repColor = d3.color("#743D47"); // plum
+  var stateColor = d3.color("#D1A730"); // yellow
   var stateDarkColor = d3.rgb(86,46,53); // dark plum
-  var repLightColor = d3.rgb(227,128,115);
-  var repColor = d3.color("#BF3B27");
-  var repDarkColor = d3.rgb(143,44,28);
-  var demLightColor = d3.rgb(133,167,190);
-  var demColor = d3.color("#456A83");
-  var demDarkColor = d3.rgb(51,79,98);
   // Topline orders
   var toplineOrder_college = getOrder(dataset_counts.slice(0,4));
   var toplineOrder_grad = getOrder(dataset_counts.slice(4,8));
   var toplineOrder_career = getOrder(dataset_counts.slice(8,23));
   var toplineOrder_gov = getOrder(dataset_counts.slice(23,28));
-  var currExp, currState, currRep, currValue, currView;
+  var currExp, currState, currRep, currValue, currView, currRepName;
 
   ////////////////////////////////////////////////////////////////////////////////
   function setup() {
@@ -333,34 +327,10 @@ function init() {
   }; // end dotMouseover function
   function dotMouseout(currDot) {
     currDot.style("fill", function(d) {
-      if (d[currValue] == 1) { // experience
-        if (currView == "party") {
-          if (d.party == "Democrat") { return demDarkColor; }
-          else { return repDarkColor; }
-        }
-        else { return experienceDarkColor; }
-      }
-      else if (d.state == currValue) { // state
-        if (currView == "party") {
-          if (d.party == "Democrat") { return demDarkColor; }
-          else { return repDarkColor; }
-        }
-        else { return stateDarkColor; }
-      }
-      else if (d.full_name == currRep) {
-        if (currView == "party") {
-          if (d.party == "Democrat") { return demLightColor; }
-          else { return repLightColor; }
-        }
-        else { return stateDarkColor; }
-      }
-      else {
-        if (currView == "party") {
-          if (d.party == "Democrat") { return demColor; }
-          else { return repColor; }
-        }
-        else { return green; }
-      }
+      if (currExp & d[currValue] == 1) { return experienceColor; }
+      else if (currState & d.state == currValue) { return stateColor; }
+      else if (currRep & d.full_name == currRepName) { return repColor; }
+      else { return green; }
     });
     svg.selectAll(".mouseover_text").remove();
     svg.selectAll(".mouseover_back").remove();
@@ -452,11 +422,31 @@ function init() {
          else { return green; }
        });
   }; // end colorDots
+  function defaultColors() {
+    svg.selectAll(".memberDots").style("fill", green);
+    svg.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
+  }; // end defaultColors
   function clickSmallLabels(smallLabel) { // When a small label is clicked...
     currValue = convertLabelToVariable(smallLabel); // find var name of small label text
-    currState, currRep = false;
+    currState = currRep = false;
     currExp = true;
-    updateDots(d3.select("#col1"), dataset_ind.sort(function(a,b) { return b[currValue]-a[currValue]; }));
+    // Update dots
+    if (currView == "total") {
+      updateDots(d3.select("#col1"), dataset_ind.sort(function(a,b) { return b[currValue]-a[currValue]; }));
+    }
+    else {
+      // Assign datasets
+      if (currView == "party") {
+        var dataset_col1 = dataset_ind.filter(function(d) { return d.party == "Democrat"; });
+        var dataset_col2 = dataset_ind.filter(function(d) { return d.party == "Republican"; });
+      }
+      else {
+        var dataset_col1 = dataset_ind.filter(function(d) { return d.new == 0; });
+        var dataset_col2 = dataset_ind.filter(function(d) { return d.new == 1; });
+      }
+      updateDots(d3.select("#col1"), dataset_col1.sort(function(a,b) { return b[currValue]-a[currValue]; })); // update col 1
+      updateDots(d3.select("#col2"), dataset_col2.sort(function(a,b) { return b[currValue]-a[currValue]; })); // update col 2
+    }; // end updating columns
     colorDots();
   }; // end click function
   function changeButtonStyle(button) {
@@ -496,12 +486,6 @@ function init() {
     // column 1
     svg.select("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top + 15) + ")");
     updateDots(d3.select("#col1"), dataset_col1);
-    svg.select("#col1")
-       .selectAll(".memberDots")
-       .style("fill", function() {
-         if (type == "party") { return demColor; }
-         else { return green; }
-       });
     svg.select("#col1label").style("display", "inline"); // label
     svg.select("#col1label")
        .text(function() {
@@ -509,22 +493,12 @@ function init() {
          else { return "Joined before 2019"; }
        })
        .attr("x", function() {
-         if (type == "party") { return margin_left + w_labels + 10*circleSpace; }
-         else { return margin_left + w_labels + 14*circleSpace; }
-       })
-       .style("fill", function() {
-         if (type == "party") { return demColor; }
-         else { return "black"; }
+         if (type == "party") { return margin_left + w_labels + dataset_ind.filter(function(d) { return d.party=="Democrat" & d.college_public==1; }).length/circlesPerCol/2*circleSpace; }
+         else { return margin_left + w_labels + dataset_ind.filter(function(d) { return d.new==0 & d.college_public==1; }).length/circlesPerCol/2*circleSpace;; }
        });
     // column 2
     svg.select("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top + 15) + ")");
     updateDots(d3.select("#col2"), dataset_col2);
-    svg.select("#col2") // dot colors
-       .selectAll(".memberDots")
-       .style("fill", function() {
-         if (type == "party") { return repColor; }
-         else { return green; }
-       });
     svg.select("#col2label").style("display", "inline"); // labels
     svg.select("#col2label")
        .text(function() {
@@ -534,10 +508,6 @@ function init() {
        .attr("x", function() {
          if (type == "party") { return margin_left + w_labels + columnWidth + margin_btwnCol + circlesPerRow*circleSpace/2; }
          else { return margin_left + w_labels + columnWidth + margin_btwnCol + 5*circleSpace; }
-       })
-       .style("fill", function() {
-         if (type == "party") { return repColor; }
-         else { return "black"; }
        });
     // Resize Labels
     resizeLabels();
@@ -549,8 +519,7 @@ function init() {
     // move groups
     svg.select("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
     svg.select("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
-    // update dot colors
-    svg.selectAll(".memberDots").style("fill", green);
+    defaultColors();
     // resize labels
     resizeLabels();
   }; // end totalView
@@ -704,14 +673,29 @@ function init() {
   }; // end autocomplete
   // State search bar
   var statesList = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
-  var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HI','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RH','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+  var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HI','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
   autocomplete(document.getElementById("searchbar-state"), statesList); // autocomplete function
   function searchState(state) {
-    svg.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
     currValue = statesAbbrevList[statesList.indexOf(state)];
     currState = true;
-    currRep, currExp = false;
-    updateDots(d3.select("#col1"), dataset_ind.sort(function(a,b) { return (b.state==currValue) - (a.state==currValue); }));
+    currRep = currExp = false;
+    defaultColors();
+    if (currView == "total") {
+      updateDots(d3.select("#col1"), dataset_ind.sort(function(a,b) { return (b.state==currValue) - (a.state==currValue); }));
+    }
+    else {
+      // Assign datasets
+      if (currView == "party") {
+        var dataset_col1 = dataset_ind.filter(function(d) { return d.party == "Democrat"; });
+        var dataset_col2 = dataset_ind.filter(function(d) { return d.party == "Republican"; });
+      }
+      else {
+        var dataset_col1 = dataset_ind.filter(function(d) { return d.new == 0; });
+        var dataset_col2 = dataset_ind.filter(function(d) { return d.new == 1; });
+      }
+      updateDots(d3.select("#col1"), dataset_col1.sort(function(a,b) { return (b.state==currValue) - (a.state==currValue); })); // update col 1
+      updateDots(d3.select("#col2"), dataset_col2.sort(function(a,b) { return (b.state==currValue) - (a.state==currValue); })); // update col 2
+    }; // end updating columns
     colorDots();
   }; // end searchState;
 
@@ -722,17 +706,16 @@ function init() {
   };
   autocomplete(document.getElementById("searchbar-rep"), repsList); // autocomplete function
   function searchRep(rep) {
-    // Change back to default (or as before)
-    svg.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
     svg.selectAll(".memberDots")
        .style("fill", function(d) {
          if (currExp & d[currValue] == 1) { return experienceColor; }
          else if (currState & d.state == currValue) { return stateColor; }
          else { return green; }
        });
-    currRep = rep;
+    currRep = true;
+    currRepName = rep;
     svg.selectAll(".memberDots")
-       .filter(function(d) { return d.full_name == rep; })
+       .filter(function(d) { return d.full_name == currRepName; })
        .style("fill", repColor);
   }; // end searchRep
 
@@ -740,24 +723,35 @@ function init() {
   // Party
   d3.select("#button-party").on("click", function() {
     currView = "party";
+    currRep = currExp = currState = false;
     var currButton = d3.select(this);
-    changeButtonStyle(currButton); // change button style
+    // Change styles
+    changeButtonStyle(currButton); // button style
     d3.select("#button-total").style("display", "inline"); // show total button
+    defaultColors();
+    // update dots and view
     comparisonView("party");
   });
   // Year joined
   d3.select("#button-year").on("click", function() {
     currView = "year";
+    currRep = currExp = currState = false;
     var currButton = d3.select(this);
-    changeButtonStyle(currButton);
+    // change styles
+    changeButtonStyle(currButton); // button style
+    defaultColors();
     d3.select("#button-total").style("display", "inline");// show total button
-    comparisonView(currButton.value);
+    // update dots and view
+    comparisonView("year");
   });
   // Total button
   d3.select("#button-total").on("click", function() {
     currView = "total";
+    currRep = currExp = currState = false;
+    // change styles
     d3.select(this).style("display", "none"); // make button disappear
-    defaultButtonStyle(d3.selectAll("button"));
+    defaultButtonStyle(d3.selectAll("button")); // turn off highlighting other buttons
+    defaultColors();
     // Margins
     maxDots = 219;
     circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
