@@ -198,6 +198,7 @@ function init() {
 
   }; // end setup
   function reset() {
+    jQuery(window).scrollTop(0);
     currValue = "";
     currView = "total";
   }; // end reset function
@@ -734,6 +735,7 @@ function init() {
   // Side-by-side comparison button clicks
   // Party
   d3.select("#button-party").on("click", function() {
+    jQuery(window).scrollTop(0);
     currView = "party";
     currRep = currExp = currState = false;
     var currButton = d3.select(this);
@@ -746,6 +748,7 @@ function init() {
   });
   // Year joined
   d3.select("#button-year").on("click", function() {
+    jQuery(window).scrollTop(0);
     currView = "year";
     currRep = currExp = currState = false;
     var currButton = d3.select(this);
@@ -758,6 +761,7 @@ function init() {
   });
   // Total button
   d3.select("#button-total").on("click", function() {
+    jQuery(window).scrollTop(0);
     currView = "total";
     currRep = currExp = currState = false;
     // change styles
@@ -792,7 +796,23 @@ function init() {
     h = margin_top + h_bigLabels*4 + (circlesPerCol*circleSpace + 10)*28 + margin_btwn*3 + margin_bottom;
     document.getElementById("chart-svg").style.height = h;
     resize();
-  });
+  }); // resizing
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // NAVIGATION
+  // Scrolling and options sticky
+  var optionsTop = jQuery("#options").position().top + jQuery("#options").height();
+  var optionsWidth = jQuery("#options").width();
+  jQuery(window).scroll(function() {
+    // init sticky options
+    var scrollVal = jQuery(this).scrollTop();
+    if (scrollVal >= optionsTop) {
+      jQuery("#options").addClass("stuck").css("width", optionsWidth).css("margin-left", optionsWidth*-1/2).css("left", "50%");
+    }
+    else {
+      jQuery("#options").removeClass("stuck").css("margin", "auto").css("left", 0);
+    }
+  })
 }; // end init
 ////////////////////////////////////////////////////////////////////////////////
 function rowConverter1(d) {

@@ -26,7 +26,14 @@ body,html {
 #options {
   max-width: 900px;
   margin: auto;
+  padding-bottom: 15px;
   border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+.stuck {
+  position: fixed;
+  top: 0;
 }
 #options-wrapper {
   max-width: 650px;
@@ -42,6 +49,7 @@ body,html {
 }
 .searchbar-input {
   width: 75%;
+  height: 18px;
 }
 .autocomplete {
   position: relative;
