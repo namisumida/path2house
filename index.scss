@@ -117,7 +117,7 @@ button {
   font-weight: 800;
   font-size: 14px;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.3s;
 }
 .accordion:after {
   content: '\02795';
@@ -126,11 +126,15 @@ button {
   float: right;
 }
 .active:after {
-  content: "\2796"; 
+  content: "\2796";
 }
 .chart-svg {
-  display: none;
   width: 100%;
+}
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
 }
 .bigLabels {
   font-size: 14px;

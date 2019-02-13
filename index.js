@@ -414,6 +414,7 @@ function init() {
     document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
     document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom;
     document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom;
+    adjustAccordionHeight(); // adjust accordion heights
 
     // Move groups
     d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
@@ -456,6 +457,7 @@ function init() {
     document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
     document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom;
     document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom;
+    adjustAccordionHeight(); // adjust accordion height
     // move groups
     d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
     d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
@@ -618,6 +620,41 @@ function init() {
       closeAllLists(e.target);
     });
   }; // end autocomplete
+  function adjustAccordionHeight() { // adjust the height of how much panel to show. This is impt when it goes from comp view to total view
+    for (var i=0; i<accordions.length; i++) {
+      var panel = accordions[i].nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        resizeLabels();
+      }
+    }
+  }; // end adjustAccordionHeight
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  reset();
+  setup();
+  window.addEventListener("resize", function() {
+  }); // resizing
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // NAVIGATION
+  // Accordion
+  var accordions = jQuery(".accordion");
+  accordions[0].nextElementSibling.style.maxHeight = accordions[0].nextElementSibling.scrollHeight + "px"; // college accordion starts out visible
+  for (var i=0; i<accordions.length; i++) {
+    accordions[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      }
+      else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        resizeLabels();
+      }
+    })
+  }
   // State search bar
   var statesList = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HI','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
@@ -706,30 +743,6 @@ function init() {
     updateDots("#col1", dataset_ind);
   });
 
-
-  ////////////////////////////////////////////////////////////////////////////////
-  reset();
-  setup();
-  window.addEventListener("resize", function() {
-  }); // resizing
-
-  ////////////////////////////////////////////////////////////////////////////////
-  // NAVIGATION
-  // Accordion
-  var accordions = jQuery(".accordion");
-  for (i=0; i<accordions.length; i++) {
-    accordions[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var chart = this.nextElementSibling;
-      if (chart.style.display == "block") {
-        chart.style.display = "none";
-      }
-      else {
-        chart.style.display = "block";
-        resizeLabels();
-      }
-    })
-  }
   // Scrolling and options sticky
   var optionsTop = jQuery("#options").position().top + jQuery("#options").height();
   var optionsWidth = jQuery("#options").width();
