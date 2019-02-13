@@ -159,6 +159,9 @@ function init() {
        })
        .on("mouseout", function() {
          dotMouseout(d3.select(this));
+       })
+       .on("click", function() {
+         dotClick(d3.select(this));
        });
 
     // Labels on click feature
@@ -240,14 +243,22 @@ function init() {
   }; // end dotMouseover function
   function dotMouseout(currDot) {
     currDot.style("fill", function(d) {
-      if (currExp & d[currValue] == 1) { return experienceColor; }
+      if (currRep & d.full_name == currRepName) { return repColor; }
+      else if (currExp & d[currValue] == 1) { return experienceColor; }
       else if (currState & d.state == currValue) { return stateColor; }
-      else if (currRep & d.full_name == currRepName) { return repColor; }
       else { return green; }
     });
     d3.selectAll(".mouseover_text").remove();
     d3.selectAll(".mouseover_back").remove();
   }; // end dotMouseout function
+  function dotClick(currDot) {
+    colorDots(); // color back to what it was before
+    currRep = true;
+    currRepName = currDot.data()[0].full_name;
+    d3.selectAll(".memberDots")
+      .filter(function(d) { return d.full_name == currRepName; })
+      .style("fill", repColor);
+  }; // end dotClick function
   function getOrder(counts_data) { // This function gets the order of small labels based on count
     var sorted_data = counts_data.sort(function(a,b) { return b.count-a.count; });
     var sorted_exp = [];
@@ -329,6 +340,9 @@ function init() {
        })
        .on("mouseout", function() {
          dotMouseout(d3.select(this));
+       })
+       .on("click", function() {
+         dotClick(d3.select(this));
        });
   }; // end updateDots
   function colorDots() {
@@ -702,7 +716,7 @@ function init() {
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
   // Accordion
-  var accordions = document.getElementsByClassName("accordion");
+  var accordions = jQuery(".accordion");
   for (i=0; i<accordions.length; i++) {
     accordions[i].addEventListener("click", function() {
       this.classList.toggle("active");

@@ -120,20 +120,17 @@ button {
   transition: 1s;
 }
 .accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  content: '\02795';
   font-size: 13px;
   margin-right: 10px;
   float: right;
 }
 .active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  content: "\2796"; 
 }
 .chart-svg {
   display: none;
   width: 100%;
-}
-#chart-college {
-  display: block;
 }
 .bigLabels {
   font-size: 14px;
