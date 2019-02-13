@@ -9,6 +9,7 @@ function init() {
   // Define universal margins - first setting to figure out margins for the 2 views
   var margin_top = margin_bottom = 10;
   var margin_btwnCol = 15;
+  var compViewLabels = 0;
   var w_labels = 105;
   var circleRadius = 5;
   var circleSpace = 12;
@@ -19,10 +20,10 @@ function init() {
   // adjusted margins
   var margin_right = margin_left = (w - w_labels - circlesPerRow*circleSpace)/2;
   // re-calculate height
-  document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
-  document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
-  document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom;
-  document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom;
+  document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+  document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+  document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom + compViewLabels;
+  document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom + compViewLabels;
   // Colors
   var green = d3.color("#377668");
   var experienceColor = d3.color("#A45A25"); // brown
@@ -42,6 +43,9 @@ function init() {
       svg_list[i].append("g").attr("id", "labelGroup").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
       svg_list[i].append("g").attr("id", "col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + margin_top + ")");
       svg_list[i].append("g").attr("id", "col2");
+      // Column 1 label
+      svg_list[i].select("#col1").append("text").attr("class", "bigLabels").attr("id", "col1label");
+      svg_list[i].select("#col2").append("text").attr("class", "bigLabels").attr("id", "col2label");
     };
     // Create big labels
     var dataset_labels = ["COLLEGE", "GRADUATE SCHOOL", "CAREER", "POLITICAL OFFICE"];
@@ -57,7 +61,7 @@ function init() {
                   .attr("class", "memberDots")
                   .attr("id", function(d) { return toplineOrder_college[j]; })
                   .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                  .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+                  .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
                   .attr("r", circleRadius);
     };
     // Create labels
@@ -70,7 +74,7 @@ function init() {
                 .attr("id", "collegeSmallLabels")
                 .text(function(d) { return d; })
                 .attr("x", 0)
-                .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+                .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
                 .call(wrap, w_labels-20);
 
     // Graduate school experience
@@ -84,7 +88,7 @@ function init() {
               .attr("class", "memberDots")
               .attr("id", function(d) { return toplineOrder_grad[j]; })
               .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
               .attr("r", circleRadius);
     };
     // Create labels
@@ -97,7 +101,7 @@ function init() {
             .attr("id", "gradSmallLabels")
             .text(function(d) { return d; })
             .attr("x", 0)
-            .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+            .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
             .call(wrap, w_labels-20);
 
     // Career
@@ -111,7 +115,7 @@ function init() {
                 .attr("class", "memberDots")
                 .attr("id", function(d) { return toplineOrder_career[j]; })
                 .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+                .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
                 .attr("r", circleRadius);
     };
     // Create labels
@@ -124,7 +128,7 @@ function init() {
               .attr("id", "careerSmallLabels")
               .text(function(d) { return d; })
               .attr("x", 0)
-              .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+              .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
               .call(wrap, w_labels-20);
 
     // Government
@@ -137,7 +141,7 @@ function init() {
               .attr("class", "memberDots")
               .attr("id", function(d) { return toplineOrder_gov[j]; })
               .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); })
+              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
               .attr("r", circleRadius);
     };
     svg_gov.select("#labelGroup")
@@ -149,7 +153,7 @@ function init() {
             .attr("id", "govSmallLabels")
             .text(function(d) { return d; })
             .attr("x", 0)
-            .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+            .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
             .call(wrap, w_labels-20);
 
     // Mouseover feature
@@ -180,22 +184,22 @@ function init() {
     d3.selectAll("#collegeSmallLabels")
         .text(function(d) { return d; })
         .attr("x", 0)
-        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
         .call(wrap, w_labels-20);
     d3.selectAll("#gradSmallLabels")
         .text(function(d) { return d; })
         .attr("x", 0)
-        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
         .call(wrap, w_labels-20);
     d3.selectAll("#careerSmallLabels")
         .text(function(d) { return d; })
         .attr("x", 0)
-        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
         .call(wrap, w_labels-20);
     d3.selectAll("#govSmallLabels")
         .text(function(d) { return d; })
         .attr("x", 0)
-        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i; })
+        .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
         .call(wrap, w_labels-20);
   }; // end resizelabels
   /////////////////////////////////////////////////////////////////////////////
@@ -297,7 +301,7 @@ function init() {
                                         .attr("r", circleRadius);
       collegeDots = collegeDots.merge(collegeDotsEnter);
       collegeDots.attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
+                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
     };
     // Grad
     for (var j=0; j<4; j++) {
@@ -312,7 +316,7 @@ function init() {
                                   .attr("r", circleRadius);
       gradDots = gradDots.merge(gradDotsEnter);
       gradDots.attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
+                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
     };
     // Career
     for (var j=0; j<15; j++) {
@@ -327,7 +331,7 @@ function init() {
                                       .attr("r", circleRadius);
       careerDots = careerDots.merge(careerDotsEnter);
       careerDots.attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
+                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
     };
     // Gov
     for (var j=0; j<5; j++) {
@@ -342,7 +346,7 @@ function init() {
                                 .attr("r", circleRadius);
       govDots = govDots.merge(govDotsEnter);
       govDots.attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol); });
+                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
     };
     // Mouseover feature
     d3.selectAll(".memberDots")
@@ -432,61 +436,64 @@ function init() {
     circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
     circlesPerRow = Math.ceil(maxDots/circlesPerCol);
     margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace*2 - margin_btwnCol)/2;
+    compViewLabels = 20;
     // re-calculate height
-    document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
-    document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
-    document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom;
-    document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom;
+    document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+    document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+    document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom + compViewLabels;
+    document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom + compViewLabels;
     adjustAccordionHeight(); // adjust accordion heights
 
     // Move groups
-    d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
+    d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top+compViewLabels) + ")");
     // column 1
-    d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
+    d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top+compViewLabels) + ")");
     updateDots("#col1", dataset_col1);
     // column 2
-    d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top) + ")");
+    d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top+compViewLabels) + ")");
     updateDots("#col2", dataset_col2);
     // Resize Labels
     resizeLabels();
-    d3.select("#comp-labels").style("display", "flex");
-    d3.select("#blankColumn1").node().style.width = (margin_left+w_labels) + "px";
-    d3.select("#blankColumn2").node().style.width = margin_btwnCol + "px";
     // Column 1 label
-    d3.select("#col1label")
+    d3.selectAll("#col1label")
       .text(function() {
         if (type == "party") { return "Democrats"; }
         else { return "Joined before 2019"; }
       })
-      .node().style.width = columnWidth + "px";
+      .attr("x", columnWidth/2)
+      .attr("y", 0);
     // Column 2 label
-    d3.select("#col2label")
+    d3.selectAll("#col2label")
       .text(function() {
         if (type == "party") { return "Republicans"; }
         else { return "Joined in 2019"; }
       })
-      .node().style.width = columnWidth + "px";
+      .attr("x", columnWidth/2)
+      .attr("y", 0);
   }; // end comparisonView
   function totalView() {
     d3.selectAll("#col2").selectAll(".memberDots").remove(); // remove col2
-    d3.select("#comp-labels").style("display", "none");
+    d3.select(".comp-labels").style("display", "none");
     // Margins
     maxDots = 219;
     circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
     circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
     circlesPerRow = Math.ceil(maxDots/circlesPerCol);
     margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
-    document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
-    document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
-    document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom;
-    document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom;
+    compViewLabels = 0;
+    document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+    document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+    document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom + compViewLabels;
+    document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom + compViewLabels;
     adjustAccordionHeight(); // adjust accordion height
     // move groups
     d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
     d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
     defaultColors();
-    // resize labels
+    // adjust labels
     resizeLabels();
+    d3.select("#col1label").text("");
+    d3.select("#col2label").text("");
     updateDots("#col1", dataset_ind);
   }; // end totalView
   function wrap(text, width) { // text wrapping function
@@ -668,11 +675,11 @@ function init() {
     currView = "total";
     currRep = currExp = currState = false;
     // change styles
-    d3.select(this).style("display", "none"); // make button disappear
+    d3.select("#button-total").style("display", "none"); // make button disappear
     defaultButtonStyle(d3.selectAll("button")); // turn off highlighting other buttons
     defaultColors();
     totalView();
-    // Deal with other a's 
+    // Deal with other a's
     jQuery("a").removeClass("clicked");
     this.classList.toggle("clicked");
   });

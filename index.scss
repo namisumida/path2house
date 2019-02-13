@@ -116,10 +116,6 @@ button {
   margin-top: 10px;
   margin-bottom: 30px;
 }
-#comp-labels {
-  display: none;
-  text-align: center;
-}
 .accordion {
   padding-left: 10px;
   background: $lightGray;
@@ -146,6 +142,12 @@ button {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+}
+#col1label {
+  text-anchor: middle;
+}
+#col2label {
+  text-anchor: middle;
 }
 .bigLabels {
   font-size: 14px;
