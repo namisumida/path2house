@@ -48,6 +48,7 @@ prop.table(table(merged$college_elite, merged$party))
 # Grad school 
 prop.table(table(merged$edu_med))
 prop.table(table(merged$edu_law, merged$state))
+nrow(subset(merged, merged$edu_doctorate==1 | merged$edu_law==1 | merged$edu_masters==1 | merged$edu_med==1))/nrow(subset(merged))
 
 # Political offices 
 prop.table(table(merged$gov_publiclawyerjudge))

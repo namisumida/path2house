@@ -11,19 +11,27 @@ body,html {
 }
 #header {
   margin: 0 auto;
-  max-width: 650px;
-  margin-top: 30px;
+  max-width: 600px;
+  margin-top: 50px;
 }
-#subtitle {
+.subtitle {
   margin: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  max-width: 850px;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  max-width: 800px;
 }
-
-
+#header-subtitle {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+a {
+  cursor: pointer;
+  font-weight: 500;
+  color: $green;
+}
+.clicked {
+  color: $experienceColor;
+}
 
 
 #options {
@@ -120,6 +128,7 @@ button {
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
+  margin: 8px;
 }
 .accordion:after {
   content: '\02795';

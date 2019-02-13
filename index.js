@@ -167,16 +167,7 @@ function init() {
     // Labels on click feature
     d3.selectAll(".smallLabels")
        .on("click", function() {
-         // Change all dots to green and labels to black initially
-         d3.selectAll(".smallLabels")
-            .style("fill", "black")
-            .style("font-weight", 400);
-         d3.selectAll(".memberDots").style("fill", green);
-         var selection = d3.select(this);
-         var currText = selection.text();
-         selection.style("font-weight", 500)
-                  .style("fill", experienceColor);
-         clickSmallLabels(selection.data()[0]);
+         clickSmallLabels(d3.select(this).data()[0]);
        });
 
   }; // end setup
@@ -378,9 +369,21 @@ function init() {
     d3.selectAll(".smallLabels").style("fill", "black").style("font-weight", 400); // change small labels back to all black
   }; // end defaultColors
   function clickSmallLabels(smallLabel) { // When a small label is clicked...
+    // Change all dots to green and labels to black initially
+    d3.selectAll(".smallLabels")
+       .style("fill", "black")
+       .style("font-weight", 400);
+    d3.selectAll(".memberDots").style("fill", green);
+
     currValue = convertLabelToVariable(smallLabel); // find var name of small label text
     currState = currRep = false;
     currExp = true;
+    // Change styles of labels
+    var selection = d3.selectAll(".smallLabels").filter(function(d) { return d==smallLabel; });
+    var currText = selection.text();
+    selection.style("font-weight", 500)
+             .style("fill", experienceColor);
+
     // Update dots
     if (currView == "total") {
       updateDots("#col1", dataset_ind.sort(function(a,b) { return b[currValue]-a[currValue]; }));
@@ -484,6 +487,7 @@ function init() {
     defaultColors();
     // resize labels
     resizeLabels();
+    updateDots("#col1", dataset_ind);
   }; // end totalView
   function wrap(text, width) { // text wrapping function
     text.each(function () {
@@ -659,6 +663,31 @@ function init() {
 
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
+  // Visual essay links
+  d3.select("#link_total").on("click", function() {
+    currView = "total";
+    currRep = currExp = currState = false;
+    // change styles
+    d3.select(this).style("display", "none"); // make button disappear
+    defaultButtonStyle(d3.selectAll("button")); // turn off highlighting other buttons
+    defaultColors();
+    totalView();
+    // Deal with other a's 
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  });
+  d3.select("#link_party").on("click", function() {
+    currView = "party";
+    currRep = currExp = currState = false;
+    var currButton = d3.select("#button-party");
+    // Change styles
+    changeButtonStyle(currButton); // button style
+    d3.select("#button-total").style("display", "inline"); // show total button
+    defaultColors();
+    comparisonView("party");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  });
   // Accordion
   var accordions = jQuery(".accordion");
   accordions[0].nextElementSibling.style.maxHeight = accordions[0].nextElementSibling.scrollHeight + "px"; // college accordion starts out visible
@@ -671,7 +700,7 @@ function init() {
       }
       else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        resizeLabels();
+        totalView();
       }
     })
   }
@@ -760,7 +789,6 @@ function init() {
     defaultColors();
     // Update dots
     totalView();
-    updateDots("#col1", dataset_ind);
   });
 
   // Scrolling and options sticky
