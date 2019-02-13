@@ -18,8 +18,9 @@ body,html {
   margin: auto;
   margin-top: 1em;
   margin-bottom: 1em;
-  max-width: 800px;
-  padding: 8px;
+  max-width: 850px;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 
@@ -85,6 +86,7 @@ button {
   font-weight: 500;
   border: 1.5px solid;
   cursor: pointer;
+  margin: 1px;
 }
 #button-party {
   width: 55px;
@@ -149,10 +151,7 @@ button {
   fill: $green;
   cursor: pointer;
 }
-.mouseover_text {
-  font-size: 11px;
-  text-anchor: start;
-}
+
 
 
 
@@ -170,7 +169,7 @@ button {
 
 
 
-@media screen and (min-width:400px) {
+@media screen and (min-width:399px) {
   h1 {
     font-size: 30px;
     text-align: center;
@@ -182,6 +181,9 @@ button {
   p {
     font-size: 13px;
     font-weight: 200;
+  }
+  .mouseover_text {
+    font-size: 11px;
   }
 }
 @media screen and (max-width:400px) {
@@ -196,5 +198,8 @@ button {
   p {
     font-size: 11px;
     font-weight: 200;
+  }
+  .mouseover_text {
+    font-size: 10px;
   }
 }

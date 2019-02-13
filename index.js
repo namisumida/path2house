@@ -12,12 +12,12 @@ function init() {
   var w_labels = 105;
   var circleRadius = 5;
   var circleSpace = 12;
-  var circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
+  var circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left=10, min right=10;
   var maxDots = 219;
   var circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
   var circlesPerRow = Math.ceil(maxDots/circlesPerCol);
   // adjusted margins
-  var margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
+  var margin_right = margin_left = (w - w_labels - circlesPerRow*circleSpace)/2;
   // re-calculate height
   document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
   document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
@@ -214,28 +214,48 @@ function init() {
     var parentNode = "#" + currDot.node().parentNode.id;
     var currX = parseInt(currDot.attr("cx"));
     var currY = parseInt(currDot.attr("cy"));
+    var compX = parseInt(currX + d3.select(parentNode).node().getBoundingClientRect().x);
     // style changes
     currDot.style("fill", repColor);
     // tooltip
+    var overflowMargin = w-130;
     d3.select(svgNode).select(parentNode)
         .append("text")
         .attr("class", "mouseover_text")
         .attr("id", "mouseover_name")
         .text(function() { return currDot.data()[0].full_name; })
-        .attr("x", currX+15)
-        .attr("y", currY+10);
+        .attr("x", function() {
+          if (compX >= overflowMargin) { return currX-15; }
+          else { return currX+15; }
+        })
+        .attr("y", currY+10)
+        .style("text-anchor", function() {
+          if (compX >= overflowMargin) { return "end"; }
+          else { return "start"; }
+        });
     d3.select(svgNode).select(parentNode)
        .append("text")
        .attr("class", "mouseover_text")
        .text(function() { return "(" + currDot.data()[0].state + ")"; })
-       .attr("x", currX+15)
-       .attr("y", currY+25);
+       .attr("x", function() {
+         if (compX >= overflowMargin) { return currX-15; }
+         else { return currX+15; }
+       })
+       .attr("y", currY+25)
+       .style("text-anchor", function() {
+         if (compX >= overflowMargin) { return "end"; }
+         else { return "start"; }
+       });
+    var mouseoverTextWidth = d3.select("#mouseover_name").node().getBoundingClientRect().width;
     d3.select(svgNode).select(parentNode)
         .append("rect")
         .attr("class", "mouseover_back")
-        .attr("x", currX+10)
+        .attr("x", function() {
+          if (compX >= overflowMargin) { return currX-20-mouseoverTextWidth; }
+          else { return currX+10; }
+        })
         .attr("y", currY)
-        .attr("width", 10+d3.select("#mouseover_name").node().getBoundingClientRect().width)
+        .attr("width", mouseoverTextWidth + 10)
         .attr("height", 30)
         .style("fill", "white")
         .style("opacity", 0.9);
