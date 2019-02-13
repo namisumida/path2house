@@ -7,7 +7,7 @@ function init() {
   // Defining margins
   var w = document.getElementById("chart-college").getBoundingClientRect().width;
   // Define universal margins - first setting to figure out margins for the 2 views
-  var margin_top = margin_bottom = margin_btwn = 10;
+  var margin_top = margin_bottom = 10;
   var margin_btwnCol = 15;
   var w_labels = 105;
   var circleRadius = 5;
@@ -431,9 +431,13 @@ function init() {
   }; // end comparisonView
   function totalView() {
     d3.selectAll("#col2").selectAll(".memberDots").remove(); // remove col2
-    d3.select("#col1label").style("display", "none"); // remove labels
-    d3.select("#col2label").style("display", "none");
-    // recalc height
+    d3.select("#comp-labels").style("display", "none");
+    // Margins
+    maxDots = 219;
+    circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
+    circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
+    circlesPerRow = Math.ceil(maxDots/circlesPerCol);
+    margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
     document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
     document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom;
     document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom;
@@ -664,8 +668,7 @@ function init() {
   });
   // Year joined
   d3.select("#button-year").on("click", function() {
-    jQuery(window).scrollTop(0);
-    currView = "year";
+    jQuery(window).scrollTop(0);    currView = "year";
     currRep = currExp = currState = false;
     var currButton = d3.select(this);
     // change styles
@@ -684,14 +687,6 @@ function init() {
     d3.select(this).style("display", "none"); // make button disappear
     defaultButtonStyle(d3.selectAll("button")); // turn off highlighting other buttons
     defaultColors();
-    // Margins
-    maxDots = 219;
-    circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
-    maxDots = 219;
-    circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
-    circlesPerRow = Math.ceil(maxDots/circlesPerCol);
-    margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
-    h = margin_top + (circlesPerCol*circleSpace + 10)*28 + margin_btwn*3 + margin_bottom;
     // Update dots
     totalView();
     updateDots("#col1", dataset_ind);
@@ -702,23 +697,15 @@ function init() {
   reset();
   setup();
   window.addEventListener("resize", function() {
-    w = document.getElementById("chart-svg").getBoundingClientRect().width;
-    // margins
-    circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
-    circlesPerCol = Math.ceil(219/circlesPerRowMax); // max number of members in one category
-    circlesPerRow = Math.ceil(219/circlesPerCol);
-    margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2;
-    h = margin_top + (circlesPerCol*circleSpace + 10)*28 + margin_btwn*3 + margin_bottom;
-    document.getElementById("chart-svg").style.height = h;
-    resize();
   }); // resizing
 
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
   // Accordion
-  var accordions = document.getElementsByClassName("accordionHeading");
+  var accordions = document.getElementsByClassName("accordion");
   for (i=0; i<accordions.length; i++) {
     accordions[i].addEventListener("click", function() {
+      this.classList.toggle("active");
       var chart = this.nextElementSibling;
       if (chart.style.display == "block") {
         chart.style.display = "none";

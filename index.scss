@@ -110,13 +110,23 @@ button {
   display: none;
   text-align: center;
 }
-.accordionHeading {
+.accordion {
   padding-left: 10px;
   background: $lightGray;
   line-height: 30px;
   font-weight: 800;
   font-size: 14px;
   cursor: pointer;
+  transition: 1s;
+}
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  margin-right: 10px;
+  float: right;
+}
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 .chart-svg {
   display: none;
