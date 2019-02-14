@@ -695,6 +695,18 @@ function init() {
     jQuery("a").removeClass("clicked");
     this.classList.toggle("clicked");
   });
+  d3.selectAll("#link_year").on("click", function() {
+    currView = "year";
+    currRep = currExp = currState = false;
+    var currButton = d3.select("#button-year");
+    // Change styles
+    changeButtonStyle(currButton); // button style
+    d3.select("#button-total").style("display", "inline"); // show total button
+    defaultColors();
+    comparisonView("year");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  });
   d3.select("#link_collegeNoneTotal").on("click", function() {
     clickSmallLabels("No Bachelor's degree");
     jQuery("a").removeClass("clicked");
@@ -712,6 +724,11 @@ function init() {
     d3.selectAll(".memberDots")
        .filter(function(d) { return d.full_name == currRepName; })
        .style("fill", repColor);
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  });
+  d3.select("#link_govState").on("click", function() {
+    clickSmallLabels("State legislature");
     jQuery("a").removeClass("clicked");
     this.classList.toggle("clicked");
   });
@@ -776,7 +793,6 @@ function init() {
   // Side-by-side comparison button clicks
   // Party
   d3.select("#button-party").on("click", function() {
-    jQuery(window).scrollTop(0);
     currView = "party";
     currRep = currExp = currState = false;
     var currButton = d3.select(this);
@@ -789,7 +805,7 @@ function init() {
   });
   // Year joined
   d3.select("#button-year").on("click", function() {
-    jQuery(window).scrollTop(0);    currView = "year";
+    currView = "year";
     currRep = currExp = currState = false;
     var currButton = d3.select(this);
     // change styles
@@ -801,7 +817,6 @@ function init() {
   });
   // Total button
   d3.select("#button-total").on("click", function() {
-    jQuery(window).scrollTop(0);
     currView = "total";
     currRep = currExp = currState = false;
     // change styles
