@@ -445,12 +445,12 @@ function init() {
     adjustAccordionHeight(); // adjust accordion heights
 
     // Move groups
-    d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top+compViewLabels) + ")");
+    d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
     // column 1
-    d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top+compViewLabels) + ")");
+    d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
     updateDots("#col1", dataset_col1);
     // column 2
-    d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top+compViewLabels) + ")");
+    d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top) + ")");
     updateDots("#col2", dataset_col2);
     // Resize Labels
     resizeLabels();
@@ -492,8 +492,8 @@ function init() {
     defaultColors();
     // adjust labels
     resizeLabels();
-    d3.select("#col1label").text("");
-    d3.select("#col2label").text("");
+    d3.selectAll("#col1label").text("");
+    d3.selectAll("#col2label").text("");
     updateDots("#col1", dataset_ind);
   }; // end totalView
   function wrap(text, width) { // text wrapping function
@@ -671,7 +671,7 @@ function init() {
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
   // Visual essay links
-  d3.select("#link_total").on("click", function() {
+  d3.selectAll("#link_total").on("click", function() {
     currView = "total";
     currRep = currExp = currState = false;
     // change styles
@@ -683,7 +683,7 @@ function init() {
     jQuery("a").removeClass("clicked");
     this.classList.toggle("clicked");
   });
-  d3.select("#link_party").on("click", function() {
+  d3.selectAll("#link_party").on("click", function() {
     currView = "party";
     currRep = currExp = currState = false;
     var currButton = d3.select("#button-party");
@@ -694,6 +694,9 @@ function init() {
     comparisonView("party");
     jQuery("a").removeClass("clicked");
     this.classList.toggle("clicked");
+  });
+  d3.select("#link_collegeNoneTotal").on("click", function() {
+    clickSmallLabels("No Bachelor's degree");
   });
   // Accordion
   var accordions = jQuery(".accordion");
@@ -707,7 +710,6 @@ function init() {
       }
       else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        totalView();
       }
     })
   }
