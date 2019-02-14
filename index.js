@@ -697,6 +697,23 @@ function init() {
   });
   d3.select("#link_collegeNoneTotal").on("click", function() {
     clickSmallLabels("No Bachelor's degree");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  });
+  d3.select("#link_gradMastersTotal").on("click", function() {
+    clickSmallLabels("Masters");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  });
+  d3.select("#link_repHenryCuellar").on("click", function() {
+    colorDots();
+    currRep = true;
+    currRepName = "Henry Cuellar";
+    d3.selectAll(".memberDots")
+       .filter(function(d) { return d.full_name == currRepName; })
+       .style("fill", repColor);
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
   });
   // Accordion
   var accordions = jQuery(".accordion");
@@ -748,12 +765,7 @@ function init() {
   };
   autocomplete(document.getElementById("searchbar-rep"), repsList); // autocomplete function
   function searchRep(rep) {
-    d3.selectAll(".memberDots")
-       .style("fill", function(d) {
-         if (currExp & d[currValue] == 1) { return experienceColor; }
-         else if (currState & d.state == currValue) { return stateColor; }
-         else { return green; }
-       });
+    colorDots();
     currRep = true;
     currRepName = rep;
     d3.selectAll(".memberDots")
