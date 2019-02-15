@@ -4,8 +4,6 @@ function init() {
   var svg_career = d3.select("#chart-career");
   var svg_gov = d3.select("#chart-gov");
   var svg_list = [svg_college, svg_grad, svg_career, svg_gov];
-  // Defining margins
-  var w = document.getElementById("chart-college").getBoundingClientRect().width;
   // Define universal margins - first setting to figure out margins for the 2 views
   var margin_top = margin_bottom = 10;
   var margin_btwnCol = 15;
@@ -13,17 +11,9 @@ function init() {
   var w_labels = 105;
   var circleRadius = 5;
   var circleSpace = 12;
-  var circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left=10, min right=10;
   var maxDots = 219;
-  var circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
-  var circlesPerRow = Math.ceil(maxDots/circlesPerCol);
-  // adjusted margins
-  var margin_right = margin_left = (w - w_labels - circlesPerRow*circleSpace)/2;
-  // re-calculate height
-  document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
-  document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
-  document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom + compViewLabels;
-  document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom + compViewLabels;
+  var w = d3.min([900, document.getElementById("chart").getBoundingClientRect().width], function(d) { return d; });
+  var margin_right, margin_left, circlesPerRowMax, circlesPerCol,circlesPerRow;
   // Colors
   var green = d3.color("#377668");
   var experienceColor = d3.color("#A45A25"); // brown
@@ -40,8 +30,8 @@ function init() {
   function setup() {
     // Create groups
     for (var i=0; i<4; i++) {
-      svg_list[i].append("g").attr("id", "labelGroup").attr("transform", "translate(" + margin_left + "," + margin_top + ")");
-      svg_list[i].append("g").attr("id", "col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + margin_top + ")");
+      svg_list[i].append("g").attr("id", "labelGroup");
+      svg_list[i].append("g").attr("id", "col1");
       svg_list[i].append("g").attr("id", "col2");
       // Column 1 label
       svg_list[i].select("#col1").append("text").attr("class", "bigLabels").attr("id", "col1label");
@@ -60,8 +50,6 @@ function init() {
                   .append("circle")
                   .attr("class", "memberDots")
                   .attr("id", function(d) { return toplineOrder_college[j]; })
-                  .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                  .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
                   .attr("r", circleRadius);
     };
     // Create labels
@@ -71,11 +59,7 @@ function init() {
                 .enter()
                 .append("text")
                 .attr("class", "smallLabels")
-                .attr("id", "collegeSmallLabels")
-                .text(function(d) { return d; })
-                .attr("x", 0)
-                .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
-                .call(wrap, w_labels-20);
+                .attr("id", "collegeSmallLabels");
 
     // Graduate school experience
     // Create dots
@@ -87,8 +71,6 @@ function init() {
               .append("circle")
               .attr("class", "memberDots")
               .attr("id", function(d) { return toplineOrder_grad[j]; })
-              .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
               .attr("r", circleRadius);
     };
     // Create labels
@@ -98,11 +80,7 @@ function init() {
             .enter()
             .append("text")
             .attr("class", "smallLabels")
-            .attr("id", "gradSmallLabels")
-            .text(function(d) { return d; })
-            .attr("x", 0)
-            .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
-            .call(wrap, w_labels-20);
+            .attr("id", "gradSmallLabels");
 
     // Career
     // Create dots
@@ -114,8 +92,6 @@ function init() {
                 .append("circle")
                 .attr("class", "memberDots")
                 .attr("id", function(d) { return toplineOrder_career[j]; })
-                .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-                .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
                 .attr("r", circleRadius);
     };
     // Create labels
@@ -125,11 +101,7 @@ function init() {
               .enter()
               .append("text")
               .attr("class", "smallLabels")
-              .attr("id", "careerSmallLabels")
-              .text(function(d) { return d; })
-              .attr("x", 0)
-              .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
-              .call(wrap, w_labels-20);
+              .attr("id", "careerSmallLabels");
 
     // Government
     for (var j=0; j<5; j++) {
@@ -140,8 +112,6 @@ function init() {
               .append("circle")
               .attr("class", "memberDots")
               .attr("id", function(d) { return toplineOrder_gov[j]; })
-              .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
-              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; })
               .attr("r", circleRadius);
     };
     svg_gov.select("#labelGroup")
@@ -150,30 +120,7 @@ function init() {
             .enter()
             .append("text")
             .attr("class", "smallLabels")
-            .attr("id", "govSmallLabels")
-            .text(function(d) { return d; })
-            .attr("x", 0)
-            .attr("y", function(d,i) { return circleSpace*(circlesPerCol/3) + (10 + circleSpace*circlesPerCol)*i + compViewLabels; })
-            .call(wrap, w_labels-20);
-
-    // Mouseover feature
-    d3.selectAll(".memberDots")
-       .on("mouseover", function() {
-         dotMouseover(d3.select(this));
-       })
-       .on("mouseout", function() {
-         dotMouseout(d3.select(this));
-       })
-       .on("click", function() {
-         dotClick(d3.select(this));
-       });
-
-    // Labels on click feature
-    d3.selectAll(".smallLabels")
-       .on("click", function() {
-         clickSmallLabels(d3.select(this).data()[0]);
-       });
-
+            .attr("id", "govSmallLabels");
   }; // end setup
   function reset() {
     jQuery(window).scrollTop(0);
@@ -472,6 +419,7 @@ function init() {
       .attr("y", 0);
   }; // end comparisonView
   function totalView() {
+    currView = "total";
     d3.selectAll("#col2").selectAll(".memberDots").remove(); // remove col2
     d3.select(".comp-labels").style("display", "none");
     // Margins
@@ -652,6 +600,7 @@ function init() {
     });
   }; // end autocomplete
   function adjustAccordionHeight() { // adjust the height of how much panel to show. This is impt when it goes from comp view to total view
+    var accordions = jQuery(".accordion");
     for (var i=0; i<accordions.length; i++) {
       var panel = accordions[i].nextElementSibling;
       if (panel.style.maxHeight) {
@@ -661,6 +610,36 @@ function init() {
     }
   }; // end adjustAccordionHeight
 
+  function display(type) {
+    d3.selectAll(".subsection-chart").style("display", "inline");
+    d3.select("#methods-text").style("display", "inline");
+    currRep = currExp = currState = false;
+    totalView();
+    // Update dots
+    if (type=="data") {
+      d3.select("#options-data").style("display", "inline");
+      d3.selectAll(".subtitle").style("display", "none");
+    }
+    else {
+      d3.select("#options-data").style("display", "none");
+      d3.selectAll(".subtitle").style("display", "block");
+    };
+    // Accordion
+    var accordions = jQuery(".accordion");
+    for (var i=0; i<accordions.length; i++) {
+      accordions[i].classList.remove("active");
+      accordions[i].nextElementSibling.style.maxHeight = null;
+    };
+    // College accordion always active at first
+    accordions[0].nextElementSibling.style.maxHeight = accordions[0].nextElementSibling.scrollHeight + "px";
+    accordions[0].classList.toggle("active");
+
+    // Labels on click feature
+    d3.selectAll(".smallLabels")
+       .on("click", function() {
+         clickSmallLabels(d3.select(this).data()[0]);
+       });
+  };
 
   ////////////////////////////////////////////////////////////////////////////////
   reset();
@@ -670,83 +649,124 @@ function init() {
 
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
-  // Visual essay links
-  d3.selectAll("#link_total").on("click", function() {
-    currView = "total";
-    currRep = currExp = currState = false;
-    // change styles
-    d3.select("#button-total").style("display", "none"); // make button disappear
-    defaultButtonStyle(d3.selectAll("button")); // turn off highlighting other buttons
-    defaultColors();
-    totalView();
-    // Deal with other a's
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  d3.selectAll("#link_party").on("click", function() {
-    currView = "party";
-    currRep = currExp = currState = false;
-    var currButton = d3.select("#button-party");
-    // Change styles
-    changeButtonStyle(currButton); // button style
-    d3.select("#button-total").style("display", "inline"); // show total button
-    defaultColors();
-    comparisonView("party");
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  d3.selectAll("#link_year").on("click", function() {
-    currView = "year";
-    currRep = currExp = currState = false;
-    var currButton = d3.select("#button-year");
-    // Change styles
-    changeButtonStyle(currButton); // button style
-    d3.select("#button-total").style("display", "inline"); // show total button
-    defaultColors();
-    comparisonView("year");
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  d3.select("#link_collegeNoneTotal").on("click", function() {
-    clickSmallLabels("No Bachelor's degree");
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  d3.select("#link_gradMastersTotal").on("click", function() {
-    clickSmallLabels("Masters");
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  d3.select("#link_repHenryCuellar").on("click", function() {
-    colorDots();
-    currRep = true;
-    currRepName = "Henry Cuellar";
-    d3.selectAll(".memberDots")
-       .filter(function(d) { return d.full_name == currRepName; })
-       .style("fill", repColor);
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  d3.select("#link_govState").on("click", function() {
-    clickSmallLabels("State legislature");
-    jQuery("a").removeClass("clicked");
-    this.classList.toggle("clicked");
-  });
-  // Accordion
-  var accordions = jQuery(".accordion");
-  accordions[0].nextElementSibling.style.maxHeight = accordions[0].nextElementSibling.scrollHeight + "px"; // college accordion starts out visible
-  for (var i=0; i<accordions.length; i++) {
-    accordions[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
+  // Initial buttons - read the story vs. explore the data
+  d3.select("#button-essay").on("click", function() {
+    display("essay");
+    // Update button style
+    d3.select(this).style("background-color", green)
+                   .style("color", "white")
+                   .style("border", "none");
+    defaultButtonStyle(d3.select("#button-data"));
+    // Visual essay links
+    d3.selectAll("#link_party").on("mouseover", function() {
+      currView = "party";
+      currRep = currExp = currState = false;
+      var currButton = d3.select("#button-party");
+      // Change styles
+      changeButtonStyle(currButton); // button style
+      d3.select("#button-total").style("display", "inline"); // show total button
+      defaultColors();
+      comparisonView("party");
+      this.classList.toggle("clicked");
+    }).on("mouseout", function() {
+      jQuery("a").removeClass("clicked");
+      totalView();
+    });
+    d3.selectAll("#link_year").on("mouseover", function() {
+      currView = "year";
+      currRep = currExp = currState = false;
+      var currButton = d3.select("#button-year");
+      // Change styles
+      changeButtonStyle(currButton); // button style
+      d3.select("#button-total").style("display", "inline"); // show total button
+      defaultColors();
+      comparisonView("year");
+      jQuery("a").removeClass("clicked");
+      this.classList.toggle("clicked");
+    }).on("mouseout", function() {
+      jQuery("a").removeClass("clicked");
+      totalView();
+    });
+    d3.select("#link_collegeNoneTotal").on("mouseover", function() {
+      clickSmallLabels("No Bachelor's degree");
+      jQuery("a").removeClass("clicked");
+      this.classList.toggle("clicked");
+    }).on("mouseout", function() {
+      jQuery("a").removeClass("clicked");
+      totalView();
+    });
+    d3.select("#link_gradMastersTotal").on("mouseover", function() {
+      clickSmallLabels("Masters");
+      jQuery("a").removeClass("clicked");
+      this.classList.toggle("clicked");
+    }).on("mouseout", function() {
+      jQuery("a").removeClass("clicked");
+      totalView();
+    });
+    d3.select("#link_repHenryCuellar").on("mouseover", function() {
+      currRep = true;
+      currExp = currState = false;
+      currRepName = "Henry Cuellar";
+      d3.selectAll(".memberDots")
+         .style("fill", function(d) {
+           if (d.full_name == currRepName) { return repColor; }
+           else { return green; }
+         });
+      jQuery("a").removeClass("clicked");
+      this.classList.toggle("clicked");
+    }).on("mouseout", function() {
+      jQuery("a").removeClass("clicked");
+      totalView();
+    });
+    d3.select("#link_govState").on("mouseover", function() {
+      clickSmallLabels("State legislature");
+      jQuery("a").removeClass("clicked");
+      this.classList.toggle("clicked");
+    }).on("mouseout", function() {
+      jQuery("a").removeClass("clicked");
+      totalView();
+    });
+  }); // end on click
+  d3.select("#button-data").on("click", function() {
+    display("data");
+    // Update button
+    d3.select(this).style("background-color", green)
+                   .style("color", "white")
+                   .style("border", "none");
+    defaultButtonStyle(d3.select("#button-essay"));
+    // Scrolling and options sticky
+    var optionsTop = jQuery("#options-data").position().top + jQuery("#options-data").height();
+    var optionsWidth = jQuery("#options-data").width();
+    jQuery(window).scroll(function() {
+      // init sticky options
+      var scrollVal = jQuery(this).scrollTop();
+      if (scrollVal >= optionsTop) {
+        jQuery("#options-data").addClass("stuck").css("width", optionsWidth).css("margin-left", optionsWidth*-1/2).css("left", "50%");
       }
       else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        jQuery("#options-data").removeClass("stuck").css("margin", "auto").css("left", 0);
       }
     })
-  }
+  }); // end on click
+  // Accordion
+  var accordions = jQuery(".accordion");
+  for (var i=0; i<accordions.length; i++) {
+    accordions[i].addEventListener("click", function() {
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) { // if hiding panel
+        this.classList.remove("active");
+        panel.style.maxHeight = null;
+      }
+      else { // showing panel
+        for (var j=0; j<accordions.length; j++) { // hide all other panels
+          accordions[j].nextElementSibling.style.maxHeight = null;
+          accordions[j].classList.remove("active");
+        }
+        this.classList.toggle("active");
+        panel.style.maxHeight = panel.scrollHeight + "px"; // show the panel clicked on
+      }
+    })
+  }; // end for loop
   // State search bar
   var statesList = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   var statesAbbrevList = ['AL','AK','AZ','AR','CA','CO','CT','DL','DC','FL','GA','HI','ID','IL','IN','IA','KS','KT','LA','MA','MD','MA','MI','MN','MS','MO','MN','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
@@ -817,7 +837,6 @@ function init() {
   });
   // Total button
   d3.select("#button-total").on("click", function() {
-    currView = "total";
     currRep = currExp = currState = false;
     // change styles
     d3.select(this).style("display", "none"); // make button disappear
@@ -827,19 +846,6 @@ function init() {
     totalView();
   });
 
-  // Scrolling and options sticky
-  var optionsTop = jQuery("#options").position().top + jQuery("#options").height();
-  var optionsWidth = jQuery("#options").width();
-  jQuery(window).scroll(function() {
-    // init sticky options
-    var scrollVal = jQuery(this).scrollTop();
-    if (scrollVal >= optionsTop) {
-      jQuery("#options").addClass("stuck").css("width", optionsWidth).css("margin-left", optionsWidth*-1/2).css("left", "50%");
-    }
-    else {
-      jQuery("#options").removeClass("stuck").css("margin", "auto").css("left", 0);
-    }
-  })
 }; // end init
 ////////////////////////////////////////////////////////////////////////////////
 function rowConverter1(d) {
@@ -890,5 +896,5 @@ d3.csv("Data/merged.csv", rowConverter1, function(data1) {
     dataset_ind = data1;
     dataset_counts = data2;
     init();
-  })
+  });
 });
