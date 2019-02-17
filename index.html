@@ -8,21 +8,24 @@
 </head>
 <body>
   <section id="header">
-		<h1 id="title-text">Past experiences of House members</h1>
-		<p id="subtitle">The new House of Representatives has been noted as being more female, representative, and novice in their political carerrs. This tool examines the different past experiences of House members including education, prior careers, and previously-held political offices.
-    Some experiences - like attending law school or working in business - are more common than others - like receiving a doctorate or pursuing a career in sports. And some overlap heavily with other experiences: xx tended to go into xx.</p>
+		<h1 id="title-text">Paths to the House of Representatives</h1>
+		<p id="header-subtitle">The new House has been noted as being more female, representative, and novice in their political careers. Examine the different past experiences of House members including their education, prior careers, and previously-held political offices.</p>
 	</section>
-  <section id="options">
+	<section id="options-nav">
+		<button type="button" id="button-essay" value="essay">Read the story</button>
+		<button type="button" id="button-data" value="data">Explore the data</button>
+	</section>
+  <section id="options-data">
 		<div id="options-wrapper">
 	    <div class="options-section" id="options-state">
 				<div class="searchbar-container">
-		      <h3>Filter by state</h3>
+		      <h3>Choose a state</h3>
 		      <input class="searchbar-input" id="searchbar-state" type="text" placeholder="Select a state">
 				</div>
 	    </div>
 	    <div class="options-section" id="options-rep">
 				<div class="searchbar-container">
-	      	<h3>Find a representative</h3>
+	      	<h3>Find a rep</h3>
 	      	<input class="searchbar-input" id="searchbar-rep" type="text" placeholder="Select a representative">
 				</div>
 	    </div>
@@ -35,7 +38,42 @@
 		</div>
   </section>
   <section id="chart">
-    <svg id="chart-svg"></svg>
+		<div class="subsection-chart">
+			<h3 class="accordion active">COLLEGE</h3>
+			<div class="panel">
+				<p class="subtitle">Overall, half of all House members attended a public university/college for an undergraduate degree, while a third attended a private college and about one-in-ten (11%) attended an elite school. And while a vast majority received a Bachelor's degree, a small portion (6%) have not.<br><br>Some <a id="link_party">party differences</a> emerge when it comes to undergraduate school type. Democratic reps are more likely to have attended private and elite schools (by 11 and 9 percentage-points, respectively) and less likely to have attended public schools (by 17 points).</p>
+				<svg class="chart-svg" id="chart-college"></svg>
+			</div>
+		</div>
+		<div class="subsection-chart">
+			<h3 class="accordion">GRADUATE SCHOOL</h3>
+			<div class="panel">
+				<p class="subtitle">As expected, a majority of all members (69%) have continued on to higher education. Roughly a third have obtained a law degree (37%) or a master's (34%), while very few have received a medical degree (5%) or a PhD (4%).<br><br>
+				<a id="link_party">Democratic reps</a> are more likely to have gone to law school (by 12 points) and obtained a masters (by 10 points), but <a id="link_party">Republicans</a> are more likely to have gone to medical school (by 6 points). <br><br>
+				Interestingly, some of the few <a id="link_collegeNoneTotal">without Bachelor's degrees</a> are with higher-education degrees. Two have a law degree and another a medical degree. Some other interesting and impressive overlaps emerge: Several of <a id="link_gradMastersTotal">
+				those who received a master's degree</a> also received a law and/or medical degree, and one member, <a id="link_repHenryCuellar">Henry Cuellar from Texas</a>, attended law school and received a masters and doctorate. </p>
+				<svg class="chart-svg" id="chart-grad"></svg>
+			</div>
+		</div>
+		<div class="subsection-chart">
+			<h3 class="accordion">CAREER</h3>
+			<div class="panel">
+				<p class="subtitle">When it comes to careers, there's a much wider range of experiences. Careers in business and private law are particularly popular (37% and 29%, respectively), as well as experiences in the military, education, and at non-profit organizations - all experienced by over 10% of House members. Other occupations are more rare, like religious leaders (1%) and sports-related jobs (2%).<br><br>Nearly all members (92%) have spent some time in one of these careers, with many - 46% - having worked in two or more. <br><br>
+				When <a id="link_party">comparing by party</a>, Republican members are more likely to have been in the military (by 16 percentage-points) and worked in a business/management-related job (by 21 points). Democratic members, on the other hand, are more likely to have worked in non-profit (by 17 points) or education sectors (by 13 points).<br><br>
+				<a id="link_year">Newer members</a> - those who joined in 2019 - have notable differences. They are more likely to have had previous careers in business (by 13 points) or the non-profit sector (by 11 points). These two occupations are interesting in light of party differences discussed previously.
+				</p>
+				<svg class="chart-svg" id="chart-career"></svg>
+			</div>
+		</div>
+		<div class="subsection-chart">
+			<h3 class="accordion">POLITICAL OFFICE</h3>
+			<div class="panel">
+				<p class="subtitle">A majority of members (76%) have held a political office in the past. About half (46%) have served in state legislative roles and roughly a third (32%) in their local government. Federal or state-level offices and public lawyers or judges each comprise of 14%.<br><br>
+				But while most have held a political office in the past, only about a quarter (26%) have held multiple. Past experiences in state legislature and local government are popular combos, with xx% having held offices in both; <a id="link_govState">among those with prior state legislative roles</a>, about half (xx%) have also held local government offices.<br><br>
+				Roughly a quarter (24%) have previously not held political roles, and <a id="link_year">new members</a> are more likely to be the case (by 18 points).</p>
+				<svg class="chart-svg" id="chart-gov"></svg>
+			</div>
+		</div>
   </section>
   <section id='methods'>
 		<p id="methods-text">Data and inspiration for this story come from <a href="https://www.nytimes.com/interactive/2019/01/26/opinion/sunday/paths-to-congress.html">this</a> visualization by The New York Times,

@@ -48,6 +48,7 @@ prop.table(table(merged$college_elite, merged$party))
 # Grad school 
 prop.table(table(merged$edu_med))
 prop.table(table(merged$edu_law, merged$state))
+nrow(subset(merged, merged$edu_doctorate==1 | merged$edu_law==1 | merged$edu_masters==1 | merged$edu_med==1))/nrow(subset(merged))
 
 # Political offices 
 prop.table(table(merged$gov_publiclawyerjudge))
@@ -55,7 +56,7 @@ prop.table(table(merged$edu_law, merged$state))
 
 # Careers
 output_df <- data.frame()
-for (i in 7:26) {
+for (i in 3:26) {
   outputList <- c(nrow(subset(merged, merged[,i]==1))/nrow(merged), 
                   nrow(subset(merged, merged[,i]==1 & merged$party=="Republican"))/nrow(subset(merged, merged$party=="Republican")), 
                   nrow(subset(merged, merged[,i]==1 & merged$party=="Democrat"))/nrow(subset(merged, merged$party=="Democrat")), 
@@ -63,7 +64,15 @@ for (i in 7:26) {
                   nrow(subset(merged, merged[,i]==1 & merged$new==0))/nrow(subset(merged, merged$new==0)))
   output_df <- rbind(output_df, outputList)
 }
-row.names(output_df) <- colnames(merged[7:26])
+for (i in 30:33) {
+  outputList <- c(nrow(subset(merged, merged[,i]==1))/nrow(merged), 
+                  nrow(subset(merged, merged[,i]==1 & merged$party=="Republican"))/nrow(subset(merged, merged$party=="Republican")), 
+                  nrow(subset(merged, merged[,i]==1 & merged$party=="Democrat"))/nrow(subset(merged, merged$party=="Democrat")), 
+                  nrow(subset(merged, merged[,i]==1 & merged$new==1))/nrow(subset(merged, merged$new==1)), 
+                  nrow(subset(merged, merged[,i]==1 & merged$new==0))/nrow(subset(merged, merged$new==0)))
+  output_df <- rbind(output_df, outputList)
+}
+row.names(output_df) <- c(colnames(merged[3:26]), colnames(merged[30:33]))
 colnames(output_df) <- c("total", "rep", "dem", "new", "old")
 write.csv(output_df, 'repos/projects/path2house/Data/analysisData.csv')
 

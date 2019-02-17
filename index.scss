@@ -1,7 +1,9 @@
 $green: #377668;
 $experienceColor: #A45A25;
-$repColor: #743D47;
-$stateColor: #D1A730;
+$repColor: black;
+$stateColor: #743D47;
+$yellow: #D1A730;
+$lightGray: #DDDAC8;
 
 body,html {
   min-width: 300px;
@@ -9,21 +11,36 @@ body,html {
 }
 #header {
   margin: 0 auto;
-  max-width: 650px;
-  margin-top: 30px;
+  max-width: 600px;
+  margin-top: 50px;
 }
-#subtitle {
+.subtitle {
   margin: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
   max-width: 800px;
-  padding: 8px;
+}
+#header-subtitle {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+a {
+  cursor: pointer;
+  font-weight: 500;
+  color: $green;
+}
+.clicked {
+  background-color: $green;
+  color: white;
 }
 
-
-
-
-#options {
+#options-nav {
+  max-width: 220px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#options-data {
+  display: none;
   max-width: 900px;
   margin: auto;
   padding-bottom: 15px;
@@ -72,7 +89,8 @@ body,html {
 }
 .autocomplete-items div:hover {
   /*when hovering an item:*/
-  background-color: $stateColor;
+  background-color: $green;
+  color: white;
 }
 button {
   background-color: none;
@@ -82,6 +100,7 @@ button {
   font-weight: 500;
   border: 1.5px solid;
   cursor: pointer;
+  margin: 1px;
 }
 #button-party {
   width: 55px;
@@ -96,15 +115,48 @@ button {
 
 
 
-
+.subsection-chart {
+  display: none;
+  margin-bottom: 10px;
+}
 #chart {
   max-width: 900px;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-#chart-svg {
+.accordion {
+  padding-left: 10px;
+  background: $lightGray;
+  line-height: 30px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 8px;
+}
+.accordion:after {
+  content: '\02795';
+  font-size: 13px;
+  margin-right: 10px;
+  float: right;
+}
+.active:after {
+  content: "\2796";
+}
+.chart-svg {
   width: 100%;
-  height: 100%;
+}
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+#col1label {
+  text-anchor: middle;
+}
+#col2label {
+  text-anchor: middle;
 }
 .bigLabels {
   font-size: 14px;
@@ -119,10 +171,7 @@ button {
   fill: $green;
   cursor: pointer;
 }
-.mouseover_text {
-  font-size: 11px;
-  text-anchor: start;
-}
+
 
 
 
@@ -133,6 +182,7 @@ button {
   margin-bottom: 100px;
 }
 #methods-text {
+  display: none;
   font-size: 11px;
   font-weight: 300;
 }
@@ -140,7 +190,7 @@ button {
 
 
 
-@media screen and (min-width:400px) {
+@media screen and (min-width:399px) {
   h1 {
     font-size: 30px;
     text-align: center;
@@ -152,6 +202,9 @@ button {
   p {
     font-size: 13px;
     font-weight: 200;
+  }
+  .mouseover_text {
+    font-size: 11px;
   }
 }
 @media screen and (max-width:400px) {
@@ -166,5 +219,8 @@ button {
   p {
     font-size: 11px;
     font-weight: 200;
+  }
+  .mouseover_text {
+    font-size: 10px;
   }
 }
