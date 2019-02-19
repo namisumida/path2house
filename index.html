@@ -7,11 +7,16 @@
 	<link type="text/css" href="index.css" rel="stylesheet"/>
 </head>
 <body>
-  <section id="header">
+  <div id="header">
 		<h1 id="title-text">Paths to the House of Representatives</h1>
 		<p id="header-subtitle">The new House has been noted as being more female, representative, and novice in their political careers. Examine the different past experiences of House members including their education, prior careers, and previously-held political offices.</p>
-	</section>
-  <section id="options-data">
+	</div>
+	<div id="options-nav">
+		<button type="button" id="button-essay" value="essay">Read about the data</button>
+		<h3 id="nav-text">or</h3>
+		<button type="button" id="button-data" value="data">Explore the data on your own</button>
+	</div>
+  <div id="options-data">
 		<div id="options-wrapper">
 	    <div class="options-section" id="options-state">
 				<div class="searchbar-container">
@@ -32,8 +37,8 @@
 				<button type="button" id="button-total" value="total">Show total</button>
 	    </div>
 		</div>
-  </section>
-  <section id="chart">
+  </div>
+  <div id="chart">
 		<div class="subsection-chart">
 			<h3 class="accordion active">COLLEGE</h3>
 			<div class="panel">
@@ -70,16 +75,12 @@
 				<svg class="chart-svg" id="chart-gov"></svg>
 			</div>
 		</div>
-  </section>
-	<section id="options-nav">
-		<button type="button" id="button-essay" value="essay">Read the story</button>
-		<button type="button" id="button-data" value="data">Explore the data</button>
-	</section>
-  <section id='methods'>
+  </div>
+  <div id='methods'>
 		<p id="methods-text">Data and inspiration for this story come from <a href="https://www.nytimes.com/interactive/2019/01/26/opinion/sunday/paths-to-congress.html">this</a> visualization by The New York Times,
       as I felt that I could create an interactive visualization that allows for more exploration and comparison than what is available in the NYT visualization.<br><br>
 		All charts were developed using d3.js.<br><br>You may find all the code and data for this project on <a href="https://github.com/namisumida/path2house">Github</a>.</p>
-	</section>
+	</div>
 
   <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

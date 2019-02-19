@@ -35,14 +35,20 @@ a {
 }
 
 #options-nav {
-  max-width: 220px;
+  max-width: 350px;
+  display: flex;
   margin: auto;
   margin-bottom: 20px;
 }
 #button-essay {
   background-color: $green;
   color: white;
-  border: none; 
+  border: none;
+}
+#nav-text {
+  margin-top: 3px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 #options-data {
   display: none;
