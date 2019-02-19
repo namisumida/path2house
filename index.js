@@ -24,7 +24,7 @@ function init() {
   var toplineOrder_grad = getOrder(dataset_counts.slice(4,8));
   var toplineOrder_career = getOrder(dataset_counts.slice(8,23));
   var toplineOrder_gov = getOrder(dataset_counts.slice(23,28));
-  var currExp, currState, currRep, currValue, currView, currRepName;
+  var currExp, currState, currRep, currValue, currView, currRepName, currMenu;
 
   ////////////////////////////////////////////////////////////////////////////////
   function setup() {
@@ -126,6 +126,7 @@ function init() {
     jQuery(window).scrollTop(0);
     currValue = "";
     currView = "total";
+    currExp = currState = currRep = false;
   }; // end reset function
   function resizeLabels() {
     d3.selectAll("#collegeSmallLabels")
@@ -644,110 +645,82 @@ function init() {
   ////////////////////////////////////////////////////////////////////////////////
   reset();
   setup();
+  currMenu = "essay";
+  display(currMenu); // initial view
   window.addEventListener("resize", function() {
   }); // resizing
 
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
-  // Initial buttons - read the story vs. explore the data
-  d3.select("#button-essay").on("click", function() {
-    display("essay");
-    // Update button style
-    d3.select(this).style("background-color", green)
-                   .style("color", "white")
-                   .style("border", "none");
-    defaultButtonStyle(d3.select("#button-data"));
-    // Visual essay links
-    d3.selectAll("#link_party").on("mouseover", function() {
-      currView = "party";
-      currRep = currExp = currState = false;
-      var currButton = d3.select("#button-party");
-      // Change styles
-      changeButtonStyle(currButton); // button style
-      d3.select("#button-total").style("display", "inline"); // show total button
-      defaultColors();
-      comparisonView("party");
-      this.classList.toggle("clicked");
-    }).on("mouseout", function() {
-      jQuery("a").removeClass("clicked");
-      totalView();
-    });
-    d3.selectAll("#link_year").on("mouseover", function() {
-      currView = "year";
-      currRep = currExp = currState = false;
-      var currButton = d3.select("#button-year");
-      // Change styles
-      changeButtonStyle(currButton); // button style
-      d3.select("#button-total").style("display", "inline"); // show total button
-      defaultColors();
-      comparisonView("year");
-      jQuery("a").removeClass("clicked");
-      this.classList.toggle("clicked");
-    }).on("mouseout", function() {
-      jQuery("a").removeClass("clicked");
-      totalView();
-    });
-    d3.select("#link_collegeNoneTotal").on("mouseover", function() {
-      clickSmallLabels("No Bachelor's degree");
-      jQuery("a").removeClass("clicked");
-      this.classList.toggle("clicked");
-    }).on("mouseout", function() {
-      jQuery("a").removeClass("clicked");
-      totalView();
-    });
-    d3.select("#link_gradMastersTotal").on("mouseover", function() {
-      clickSmallLabels("Masters");
-      jQuery("a").removeClass("clicked");
-      this.classList.toggle("clicked");
-    }).on("mouseout", function() {
-      jQuery("a").removeClass("clicked");
-      totalView();
-    });
-    d3.select("#link_repHenryCuellar").on("mouseover", function() {
-      currRep = true;
-      currExp = currState = false;
-      currRepName = "Henry Cuellar";
-      d3.selectAll(".memberDots")
-         .style("fill", function(d) {
-           if (d.full_name == currRepName) { return repColor; }
-           else { return green; }
-         });
-      jQuery("a").removeClass("clicked");
-      this.classList.toggle("clicked");
-    }).on("mouseout", function() {
-      jQuery("a").removeClass("clicked");
-      totalView();
-    });
-    d3.select("#link_govState").on("mouseover", function() {
-      clickSmallLabels("State legislature");
-      jQuery("a").removeClass("clicked");
-      this.classList.toggle("clicked");
-    }).on("mouseout", function() {
-      jQuery("a").removeClass("clicked");
-      totalView();
-    });
-  }); // end on click
-  d3.select("#button-data").on("click", function() {
-    display("data");
-    // Update button
-    d3.select(this).style("background-color", green)
-                   .style("color", "white")
-                   .style("border", "none");
-    defaultButtonStyle(d3.select("#button-essay"));
-    // Scrolling and options sticky
-    var optionsTop = jQuery("#options-data").position().top + jQuery("#options-data").height();
-    var optionsWidth = jQuery("#options-data").width();
-    jQuery(window).scroll(function() {
-      // init sticky options
-      var scrollVal = jQuery(this).scrollTop();
-      if (scrollVal >= optionsTop) {
-        jQuery("#options-data").addClass("stuck").css("width", optionsWidth).css("margin-left", optionsWidth*-1/2).css("left", "50%");
-      }
-      else {
-        jQuery("#options-data").removeClass("stuck").css("margin", "auto").css("left", 0);
-      }
-    })
-  }); // end on click
+  // Visual essay links
+  d3.selectAll("#link_party").on("mouseover", function() {
+    currView = "party";
+    currRep = currExp = currState = false;
+    var currButton = d3.select("#button-party");
+    // Change styles
+    changeButtonStyle(currButton); // button style
+    d3.select("#button-total").style("display", "inline"); // show total button
+    defaultColors();
+    comparisonView("party");
+    this.classList.toggle("clicked");
+  }).on("mouseout", function() {
+    jQuery("a").removeClass("clicked");
+    totalView();
+  });
+  d3.selectAll("#link_year").on("mouseover", function() {
+    currView = "year";
+    currRep = currExp = currState = false;
+    var currButton = d3.select("#button-year");
+    // Change styles
+    changeButtonStyle(currButton); // button style
+    d3.select("#button-total").style("display", "inline"); // show total button
+    defaultColors();
+    comparisonView("year");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  }).on("mouseout", function() {
+    jQuery("a").removeClass("clicked");
+    totalView();
+  });
+  d3.select("#link_collegeNoneTotal").on("mouseover", function() {
+    clickSmallLabels("No Bachelor's degree");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  }).on("mouseout", function() {
+    jQuery("a").removeClass("clicked");
+    totalView();
+  });
+  d3.select("#link_gradMastersTotal").on("mouseover", function() {
+    clickSmallLabels("Masters");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  }).on("mouseout", function() {
+    jQuery("a").removeClass("clicked");
+    totalView();
+  });
+  d3.select("#link_repHenryCuellar").on("mouseover", function() {
+    currRep = true;
+    currExp = currState = false;
+    currRepName = "Henry Cuellar";
+    d3.selectAll(".memberDots")
+       .style("fill", function(d) {
+         if (d.full_name == currRepName) { return repColor; }
+         else { return green; }
+       });
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  }).on("mouseout", function() {
+    jQuery("a").removeClass("clicked");
+    totalView();
+  });
+  d3.select("#link_govState").on("mouseover", function() {
+    clickSmallLabels("State legislature");
+    jQuery("a").removeClass("clicked");
+    this.classList.toggle("clicked");
+  }).on("mouseout", function() {
+    jQuery("a").removeClass("clicked");
+    totalView();
+  });
   // Accordion
   var accordions = jQuery(".accordion");
   for (var i=0; i<accordions.length; i++) {
@@ -758,9 +731,13 @@ function init() {
         panel.style.maxHeight = null;
       }
       else { // showing panel
-        for (var j=0; j<accordions.length; j++) { // hide all other panels
-          accordions[j].nextElementSibling.style.maxHeight = null;
-          accordions[j].classList.remove("active");
+        if (currMenu=="essay") { // automatically hide other panels if it's for the essay
+          for (var j=0; j<accordions.length; j++) {
+            accordions[j].nextElementSibling.style.maxHeight = null;
+            accordions[j].classList.remove("active");
+          }
+          reset();
+          colorDots();
         }
         this.classList.toggle("active");
         panel.style.maxHeight = panel.scrollHeight + "px"; // show the panel clicked on
@@ -846,6 +823,38 @@ function init() {
     totalView();
   });
 
+  // Read the story vs. explore data
+  d3.select("#button-essay").on("click", function() {
+    currMenu = "essay";
+    display(currMenu);
+    // Update button style
+    d3.select(this).style("background-color", green)
+                   .style("color", "white")
+                   .style("border", "none");
+    defaultButtonStyle(d3.select("#button-data"));
+  });
+  d3.select("#button-data").on("click", function() {
+    currMenu = "data";
+    display(currMenu);
+    // Update button
+    d3.select(this).style("background-color", green)
+                   .style("color", "white")
+                   .style("border", "none");
+    defaultButtonStyle(d3.select("#button-essay"));
+    // Scrolling and options sticky
+    var optionsTop = jQuery("#options-data").position().top + jQuery("#options-data").height();
+    var optionsWidth = jQuery("#options-data").width();
+    jQuery(window).scroll(function() {
+      // init sticky options
+      var scrollVal = jQuery(this).scrollTop();
+      if (scrollVal >= optionsTop) {
+        jQuery("#options-data").addClass("stuck").css("width", optionsWidth).css("margin-left", optionsWidth*-1/2).css("left", "50%");
+      }
+      else {
+        jQuery("#options-data").removeClass("stuck").css("margin", "auto").css("left", 0);
+      }
+    })
+  }); // end on click
 }; // end init
 ////////////////////////////////////////////////////////////////////////////////
 function rowConverter1(d) {

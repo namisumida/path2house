@@ -39,6 +39,11 @@ a {
   margin: auto;
   margin-bottom: 20px;
 }
+#button-essay {
+  background-color: $green;
+  color: white;
+  border: none; 
+}
 #options-data {
   display: none;
   max-width: 900px;
