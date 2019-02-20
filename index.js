@@ -128,6 +128,51 @@ function init() {
     currView = "total";
     currExp = currState = currRep = false;
   }; // end reset function
+  function resize() {
+    // Get new dimensions
+    w = d3.min([900, document.getElementById("chart").getBoundingClientRect().width], function(d) { return d; });
+    circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
+    circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
+    circlesPerRow = Math.ceil(maxDots/circlesPerCol);
+    margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
+    document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+    document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
+    document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom + compViewLabels;
+    document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom + compViewLabels;
+    adjustAccordionHeight(); // adjust accordion height
+    var columnWidth = (w - 10 - w_labels - margin_btwnCol - 10)/2; // width for the two columns with circles
+    // move groups
+    d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
+    d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
+    d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top) + ")");
+    // resize labels
+    resizeLabels();
+    // resize dots
+    // College
+    for (var j=0; j<4; j++) {
+      svg_college.selectAll("#"+toplineOrder_college[j])
+                 .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+    };
+    // Grad
+    for (var j=0; j<4; j++) {
+      svg_grad.selectAll("#"+toplineOrder_grad[j])
+              .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+    };
+    // Career
+    for (var j=0; j<15; j++) {
+      svg_career.selectAll("#"+toplineOrder_career[j])
+                .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+                .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+    };
+    // Gov
+    for (var j=0; j<5; j++) {
+      svg_gov.selectAll("#"+toplineOrder_gov[j])
+             .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+             .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+    };
+  };
   function resizeLabels() {
     d3.selectAll("#collegeSmallLabels")
         .text(function(d) { return d; })
@@ -370,12 +415,12 @@ function init() {
   function comparisonView(type) {
     // Dimensions for column 1
     if (type == "party") {
-      var maxDots = 119;
+      maxDots = 119;
       var dataset_col1 = dataset_ind.filter(function(d) { return d.party == "Democrat"; });
       var dataset_col2 = dataset_ind.filter(function(d) { return d.party == "Republican"; });
     }
     else {
-      var maxDots = 164;
+      maxDots = 164;
       var dataset_col1 = dataset_ind.filter(function(d) { return d.new == 0; });
       var dataset_col2 = dataset_ind.filter(function(d) { return d.new == 1; });
     }
@@ -420,6 +465,12 @@ function init() {
       .attr("y", 0);
   }; // end comparisonView
   function totalView() {
+    // change styles
+    d3.select("#button-total").style("display", "none"); // make button disappear
+    defaultButtonStyle(d3.select("#button-party"));
+    defaultButtonStyle(d3.select("#button-year")); // turn off highlighting other buttons
+    defaultColors();
+
     currView = "total";
     d3.selectAll("#col2").selectAll(".memberDots").remove(); // remove col2
     d3.select(".comp-labels").style("display", "none");
@@ -610,7 +661,6 @@ function init() {
       }
     }
   }; // end adjustAccordionHeight
-
   function display(type) {
     d3.selectAll(".subsection-chart").style("display", "inline");
     d3.select("#methods-text").style("display", "inline");
@@ -618,7 +668,7 @@ function init() {
     totalView();
     // Update dots
     if (type=="data") {
-      d3.select("#options-data").style("display", "inline");
+      d3.select("#options-data").style("display", "block");
       d3.selectAll(".subtitle").style("display", "none");
     }
     else {
@@ -640,15 +690,14 @@ function init() {
        .on("click", function() {
          clickSmallLabels(d3.select(this).data()[0]);
        });
-  };
+  };// end display()
 
   ////////////////////////////////////////////////////////////////////////////////
   reset();
   setup();
   currMenu = "essay";
   display(currMenu); // initial view
-  window.addEventListener("resize", function() {
-  }); // resizing
+  window.addEventListener("resize", resize);
 
   ////////////////////////////////////////////////////////////////////////////////
   // NAVIGATION
@@ -815,10 +864,6 @@ function init() {
   // Total button
   d3.select("#button-total").on("click", function() {
     currRep = currExp = currState = false;
-    // change styles
-    d3.select(this).style("display", "none"); // make button disappear
-    defaultButtonStyle(d3.selectAll("button")); // turn off highlighting other buttons
-    defaultColors();
     // Update dots
     totalView();
   });
@@ -835,6 +880,7 @@ function init() {
   });
   d3.select("#button-data").on("click", function() {
     currMenu = "data";
+    reset();
     display(currMenu);
     // Update button
     d3.select(this).style("background-color", green)
