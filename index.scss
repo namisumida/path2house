@@ -234,3 +234,11 @@ button {
     font-size: 10px;
   }
 }
+@media screen and (max-width:350px) {
+  button {
+    height: 35px;
+  }
+  #nav-text {
+    margin-top: 10px;
+  }
+}
