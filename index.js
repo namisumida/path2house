@@ -130,47 +130,91 @@ function init() {
   }; // end reset function
   function resize() {
     // Get new dimensions
-    w = d3.min([900, document.getElementById("chart").getBoundingClientRect().width], function(d) { return d; });
-    circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
-    circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
-    circlesPerRow = Math.ceil(maxDots/circlesPerCol);
-    margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
+    if (currView == "total") { // if total view (one column)
+      w = d3.min([900, document.getElementById("chart").getBoundingClientRect().width], function(d) { return d; });
+      circlesPerRowMax = Math.floor((w - w_labels - 20)/circleSpace); // min left and right margins = 10
+      circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
+      circlesPerRow = Math.ceil(maxDots/circlesPerCol);
+      margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace)/2; // margins for the first column
+    }
+    else { // if comp view (double column)
+      w = d3.min([900, document.getElementById("chart").getBoundingClientRect().width], function(d) { return d; });
+      var columnWidth = (w - 10 - w_labels - margin_btwnCol - 10)/2; // width for the two columns with circles
+      circlesPerRowMax = Math.floor(columnWidth/circleSpace); // min left and right margins = 10
+      circlesPerCol = Math.ceil(maxDots/circlesPerRowMax); // max number of members in one category
+      circlesPerRow = Math.ceil(maxDots/circlesPerCol);
+      margin_left = margin_right = (w - w_labels - circlesPerRow*circleSpace*2 - margin_btwnCol)/2;
+      compViewLabels = 20;
+      d3.selectAll("#col1label")
+        .attr("x", columnWidth/2);
+      // Column 2 label
+      d3.selectAll("#col2label")
+        .attr("x", columnWidth/2);
+      d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top) + ")");
+    };
+    // recalculate heights
     document.getElementById("chart-college").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
     document.getElementById("chart-grad").style.height = margin_top + (circlesPerCol*circleSpace + 10)*4 + margin_bottom + compViewLabels;
     document.getElementById("chart-career").style.height = margin_top + (circlesPerCol*circleSpace + 10)*15 + margin_bottom + compViewLabels;
     document.getElementById("chart-gov").style.height = margin_top + (circlesPerCol*circleSpace + 10)*5 + margin_bottom + compViewLabels;
-    adjustAccordionHeight(); // adjust accordion height
-    var columnWidth = (w - 10 - w_labels - margin_btwnCol - 10)/2; // width for the two columns with circles
+
     // move groups
     d3.selectAll("#labelGroup").attr("transform", "translate(" + margin_left + "," + (margin_top) + ")");
     d3.selectAll("#col1").attr("transform", "translate(" + (margin_left + w_labels) + "," + (margin_top) + ")");
-    d3.selectAll("#col2").attr("transform", "translate(" + (margin_left + w_labels + columnWidth + margin_btwnCol) + "," + (margin_top) + ")");
-    // resize labels
-    resizeLabels();
+    resizeLabels(); // resize labels
+    adjustAccordionHeight(); // adjust accordion height
     // resize dots
     // College
     for (var j=0; j<4; j++) {
-      svg_college.selectAll("#"+toplineOrder_college[j])
+      svg_college.select("#col1")
+                 .selectAll("#"+toplineOrder_college[j])
                  .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
                  .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      if (currView != "total") {
+        svg_college.select("#col2")
+                   .selectAll("#"+toplineOrder_college[j])
+                   .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+                   .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      };
     };
     // Grad
     for (var j=0; j<4; j++) {
-      svg_grad.selectAll("#"+toplineOrder_grad[j])
+      svg_grad.select("#col1")
+              .selectAll("#"+toplineOrder_grad[j])
               .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
               .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      if (currView != "total") {
+        svg_grad.select("#col2")
+                .selectAll("#"+toplineOrder_grad[j])
+                .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+                .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      };
     };
     // Career
     for (var j=0; j<15; j++) {
-      svg_career.selectAll("#"+toplineOrder_career[j])
+      svg_career.select("#col1")
+                .selectAll("#"+toplineOrder_career[j])
                 .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
                 .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      if (currView != "total") {
+        svg_career.select("#col2")
+                  .selectAll("#"+toplineOrder_career[j])
+                  .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+                  .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      };
     };
     // Gov
     for (var j=0; j<5; j++) {
-      svg_gov.selectAll("#"+toplineOrder_gov[j])
+      svg_gov.select("#col1")
+             .selectAll("#"+toplineOrder_gov[j])
              .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
              .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      if (currView != "total") {
+        svg_gov.select("#col2")
+               .selectAll("#"+toplineOrder_gov[j])
+               .attr("cx", function(d,i) { return circleSpace*Math.floor(i/circlesPerCol); })
+               .attr("cy", function(d,i) { return (10 + circleSpace*circlesPerCol)*j + circleSpace*(i%circlesPerCol) + compViewLabels; });
+      };
     };
   };
   function resizeLabels() {
