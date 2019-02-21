@@ -53,6 +53,7 @@ nrow(subset(merged, merged$edu_doctorate==1 | merged$edu_law==1 | merged$edu_mas
 # Political offices 
 prop.table(table(merged$gov_publiclawyerjudge))
 prop.table(table(merged$edu_law, merged$state))
+nrow(subset(merged, merged$gov_stateleg==1 & merged$gov_local==1))/nrow(subset(merged, merged$gov_local==1))
 
 # Careers
 output_df <- data.frame()
