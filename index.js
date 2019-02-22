@@ -707,17 +707,16 @@ function init() {
   }; // end adjustAccordionHeight
   function display(type) {
     d3.selectAll(".subsection-chart").style("display", "inline");
-    d3.select("#methods-text").style("display", "inline");
     currRep = currExp = currState = false;
     totalView();
     // Update dots
     if (type=="data") {
       d3.select("#options-data").style("display", "block");
-      d3.selectAll(".subtitle").style("display", "none");
+      d3.selectAll(".sectionText").style("display", "none");
     }
     else {
       d3.select("#options-data").style("display", "none");
-      d3.selectAll(".subtitle").style("display", "block");
+      d3.selectAll(".sectionText").style("display", "block");
     };
     // Accordion
     var accordions = jQuery(".accordion");
