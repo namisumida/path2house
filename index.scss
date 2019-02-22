@@ -20,6 +20,9 @@ body,html {
   max-width: 800px;
   padding: 1.5em;
 }
+.sectionText {
+  padding-top: 0.5em;
+}
 #header-subtitle {
   padding: 1.5em;
 }
@@ -159,6 +162,7 @@ button {
 }
 .panel {
   max-height: 0;
+  margin-top: 25px;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
 }
