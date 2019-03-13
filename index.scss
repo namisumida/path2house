@@ -11,8 +11,9 @@ body,html {
 }
 #header {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 480px;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 .subtitle {
   margin: auto;
@@ -24,7 +25,22 @@ body,html {
   padding-top: 0.5em;
 }
 #header-subtitle {
-  padding: 1.5em;
+  padding-top: 1.5em;
+}
+#author-date {
+  max-width: 250px;
+  display: flex;
+  margin: auto;
+}
+#author {
+  width: 50%;
+  text-align: center;
+  margin: 0;
+}
+#date {
+  width: 50%;
+  text-align: center;
+  margin: 0;
 }
 a {
   cursor: pointer;
@@ -37,7 +53,7 @@ a {
 }
 
 #options-nav {
-  max-width: 350px;
+  max-width: 380px;
   display: flex;
   margin: auto;
   margin-bottom: 20px;
@@ -107,7 +123,7 @@ a {
 }
 button {
   background-color: none;
-  font-size: 11px;
+  font-size: 13px;
   border-radius: 2px;
   height: 23px;
   font-weight: 500;
@@ -117,9 +133,6 @@ button {
 }
 #button-party {
   width: 55px;
-}
-#button-year {
-  width: 80px;
 }
 #button-total {
   width: 80px;
@@ -206,7 +219,7 @@ button {
 
 @media screen and (min-width:399px) {
   h1 {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     margin: 0;
   }
@@ -214,8 +227,9 @@ button {
     font-size: 14px;
   }
   p {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 200;
+    line-height: 1.5;
   }
   .mouseover_text {
     font-size: 11px;
@@ -223,11 +237,14 @@ button {
 }
 @media screen and (max-width:400px) {
   h1 {
-    font-size: 20px;
+    font-size: 28px;
     text-align: center;
     margin: 0;
   }
   h3 {
+    font-size: 12px;
+  }
+  h5 {
     font-size: 12px;
   }
   p {
